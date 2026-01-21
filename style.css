@@ -20,11 +20,11 @@ body {
 .nav-link:hover { color: #1e3a8a; }
 
 /* ==========================================
-   2. ヒーローセクション（色彩心理学アップデート）
+   2. ヒーローセクション（色彩心理学・トーン調整版）
    ========================================== */
 .hero-investment {
-    /* 深海から夜明けをイメージしたグラデーション */
-    background: linear-gradient(135deg, #020617 0%, #1e3a8a 50%, #1e40af 100%);
+    /* 背景を少しだけ明るくし、グラデーションの幅を広げて開放感を出しました */
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e40af 100%);
     padding: 140px 20px;
     color: #ffffff;
     text-align: center;
@@ -32,12 +32,12 @@ body {
     overflow: hidden;
 }
 
-/* 光の演出（浮遊感のあるアニメーション） */
+/* 光の演出：不透明度を調整し、よりクリアな印象に */
 .hero-bg-light-1 {
     position: absolute;
     top: -10%; left: -10%;
     width: 70%; height: 70%;
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.3) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, transparent 70%);
     filter: blur(80px);
     pointer-events: none;
     animation: float 10s ease-in-out infinite;
@@ -47,7 +47,7 @@ body {
     position: absolute;
     bottom: -10%; right: -10%;
     width: 60%; height: 60%;
-    background: radial-gradient(circle, rgba(96, 165, 250, 0.2) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(96, 165, 250, 0.25) 0%, transparent 70%);
     filter: blur(80px);
     pointer-events: none;
     animation: float 15s ease-in-out infinite reverse;
@@ -67,8 +67,8 @@ body {
     font-size: 11px;
     font-weight: 900;
     letter-spacing: 0.2em;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.15); /* 少し明るく */
+    border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 50px;
     backdrop-filter: blur(4px);
 }
@@ -92,22 +92,23 @@ body {
     line-height: 1.1;
     margin-bottom: 32px;
     letter-spacing: -0.02em;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 .hero-title-sub {
-    /* 成功を象徴するゴールドに近いアンバー */
-    color: #fbbf24;
+    /* ゴールドのトーンを抑え、気品のあるシャンパンブロンズへ変更 */
+    color: #c5a059; 
     font-style: normal;
     display: block;
     margin-top: 15px;
-    filter: drop-shadow(0 0 15px rgba(251, 191, 36, 0.4));
+    filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.3));
+    letter-spacing: 0.05em;
 }
 
 .hero-description {
     font-size: 1.125rem;
     line-height: 1.8;
-    color: #e2e8f0;
+    color: #f1f5f9; /* より白い色へ */
     max-width: 850px;
     margin: 0 auto 80px;
     font-weight: 500;
@@ -123,16 +124,16 @@ body {
 }
 
 .hero-card {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.1); /* 不透明度を少しアップ */
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     padding: 40px 30px;
     border-radius: 28px;
     transition: all 0.3s;
 }
 .hero-card:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(251, 191, 36, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(197, 160, 89, 0.5); /* ホバー時もブロンズ色 */
     transform: translateY(-5px);
 }
 
@@ -148,7 +149,11 @@ body {
     line-height: 1;
 }
 
-.hero-card-unit { font-size: 20px; color: #fbbf24; margin-left: 4px; }
+.hero-card-unit { 
+    font-size: 20px; 
+    color: #c5a059; /* ブロンズ色へ統一 */
+    margin-left: 4px; 
+}
 
 /* ==========================================
    3. 共通コンポーネント
@@ -173,8 +178,14 @@ body {
 #investRange::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 26px; height: 26px;
-    background: #b45309; border: 4px solid #fff; border-radius: 50%;
+    background: #a38654; /* つまみも落ち着いたブロンズへ */
+    border: 4px solid #fff; border-radius: 50%;
     cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .chart-container { position: relative; width: 100%; }
+
+/* シミュレーター内の数値を強調する色も調整 */
+#annualReturn, #taxSaving, #netOutlay {
+    color: #a38654 !important; /* グラフ・計算機の強調色も統一 */
+}
