@@ -1,6 +1,4 @@
-/* ==========================================
-   1. 共通設定（全ページで使用）
-   ========================================== */
+/* 全体設定 */
 body {
     font-family: 'Noto Sans JP', sans-serif;
     background-color: #f8fafc;
@@ -9,125 +7,167 @@ body {
     margin: 0;
 }
 
-/* 共通ナビゲーション */
 .nav-link {
     font-size: 0.875rem;
     font-weight: 700;
     color: #64748b;
     text-transform: uppercase;
-    transition: color 0.2s;
     text-decoration: none;
+    padding-bottom: 4px;
+    transition: all 0.2s;
 }
-.nav-link:hover { color: #1e40af; }
+.nav-link:hover { color: #1e3a8a; }
 
-/* ページ共通ヘッダー（グラデーション） */
-.page-header, .gradient-header {
-    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
-    padding: 4rem 1rem;
-    color: white;
+/* ヒーローセクション */
+.hero-investment {
+    background: #001f3f;
+    padding: 120px 20px;
+    color: #ffffff;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-/* 共通カードデザイン */
+/* 背景の光彩演出 */
+.hero-bg-light-1 {
+    position: absolute;
+    top: -100px; left: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.hero-bg-light-2 {
+    position: absolute;
+    bottom: -100px; right: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(96, 165, 250, 0.15) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    margin-bottom: 40px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    backdrop-filter: blur(4px);
+}
+
+.hero-badge-dot {
+    width: 8px; height: 8px;
+    background: #4ade80;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 32px;
+    letter-spacing: -0.03em;
+    font-style: italic;
+}
+
+.hero-title-sub {
+    color: #60a5fa;
+    font-style: normal;
+    display: block;
+    margin-top: 10px;
+}
+
+.hero-description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    max-width: 850px;
+    margin: 0 auto 80px;
+    font-weight: 500;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 40px 30px;
+    border-radius: 28px;
+    transition: all 0.3s;
+}
+.hero-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(96, 165, 250, 0.4);
+    transform: translateY(-5px);
+}
+
+.hero-card-label {
+    font-size: 11px; font-weight: 900;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.hero-card-value {
+    font-size: 56px; font-weight: 900;
+    line-height: 1;
+}
+
+.hero-card-unit { font-size: 20px; color: #60a5fa; margin-left: 4px; }
+
+/* 共通カード */
 .info-card {
     background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 1rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.05);
 }
 
-/* 共通ホバーエフェクト */
 .hover-lift {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hover-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
 }
 
-/* ==========================================
-   2. パーツ・コンポーネント用
-   ========================================== */
-
-/* グラフコンテナ */
-.chart-container {
-    position: relative;
-    width: 100%;
-    max-width: 650px;
-    margin: 0 auto;
-    height: 350px;
-}
-
-/* シミュレーション用スライダー（Range） */
-input[type=range] {
-    -webkit-appearance: none;
-    width: 100%;
-    background: transparent;
-}
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    background: #b45309;
-    cursor: pointer;
-    margin-top: -8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 4px;
-    background: #cbd5e1;
-    border-radius: 2px;
-}
-
-/* タイムライン・プロセスノード（合意形成プロセス用） */
-.process-node {
-    position: relative;
-    padding-left: 2rem;
-    border-left: 2px solid #e2e8f0;
-    padding-bottom: 2rem;
-}
-.process-node::before {
-    content: '';
-    position: absolute;
-    left: -9px;
-    top: 0;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: #1e3a8a;
-    border: 3px solid #fff;
-}
-
-/* ==========================================
-   3. 特殊表示（SPA切り替え用：必要であれば残す）
-   ========================================== */
-.view-section { display: none; }
-.view-section.active { 
-    display: block; 
-    animation: fadeIn 0.4s ease-out; 
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-/* Range Input Custom Design */
+/* シミュレーション用スライダー */
 #investRange {
     -webkit-appearance: none;
-    height: 8px;
+    height: 10px;
     background: #e2e8f0;
-    border-radius: 5px;
+    border-radius: 10px;
     outline: none;
 }
 #investRange::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 24px;
-    height: 24px;
+    width: 26px; height: 26px;
     background: #b45309;
+    border: 4px solid #fff;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
 }
