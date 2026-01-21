@@ -94,10 +94,71 @@
             </div>
         </section>
 
-        <section id="simulation-start" class="py-24 bg-slate-50 border-t border-slate-100">
-            <div class="max-w-7xl mx-auto px-4">
+        <section id="simulation-start" class="py-24 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tighter">投資シミュレーション</h2>
+            <p class="text-slate-600">「8%のリース収益」と「1年での節税効果」。驚異的なキャッシュ回収スピードを体感してください。</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                <h4 class="font-black text-blue-900 mb-8 border-b pb-4 uppercase tracking-tighter">条件設定</h4>
+                
+                <div class="mb-10">
+                    <label class="block text-sm font-bold text-slate-500 mb-4 uppercase">投資金額 (円)</label>
+                    <input type="range" id="investRange" min="500000" max="10000000" step="100000" value="1000000" class="w-full">
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-xs text-slate-400 font-bold">50万</span>
+                        <span id="investValue" class="text-2xl font-black text-slate-900">¥1,000,000</span>
+                        <span class="text-xs text-slate-400 font-bold">1000万</span>
+                    </div>
                 </div>
-        </section>
+
+                <div class="mb-10">
+                    <label class="block text-sm font-bold text-slate-500 mb-4 uppercase">想定実効税率 (%)</label>
+                    <select id="taxRate" class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3 font-bold text-slate-700 focus:ring-2 focus:ring-blue-500 outline-none">
+                        <option value="0.20">20% (中小企業等)</option>
+                        <option value="0.30">30% (法人標準等)</option>
+                        <option value="0.40">40% (個人・高所得者)</option>
+                        <option value="0.50" selected>50% (個人・最高税率付近)</option>
+                    </select>
+                </div>
+
+                <div class="space-y-4 pt-6 border-t border-slate-200">
+                    <div class="flex justify-between">
+                        <span class="text-sm font-bold text-slate-500">年間リース料 (8%)</span>
+                        <span id="annualReturn" class="font-black text-amber-700 text-lg">¥80,000</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-sm font-bold text-slate-500">初年度節税額</span>
+                        <span id="taxSaving" class="font-black text-blue-800 text-lg">¥500,000</span>
+                    </div>
+                    <div class="flex justify-between pt-4 border-t border-slate-200">
+                        <span class="text-lg font-black text-slate-900">実質負担額</span>
+                        <span id="netOutlay" class="text-xl font-black text-blue-600 font-mono">¥420,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2 space-y-8">
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 h-full">
+                    <h4 class="text-center font-bold text-slate-400 mb-6 text-xs uppercase tracking-widest">累積キャッシュフロー推移（税効果込み）</h4>
+                    <div class="chart-container" style="height: 350px;">
+                        <canvas id="simChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-12 bg-amber-50 p-6 rounded-2xl border-l-4 border-amber-600 max-w-4xl mx-auto">
+            <h5 class="font-black text-amber-900 mb-2 flex items-center gap-2">⚖️ 節税効果の法的根拠</h5>
+            <p class="text-xs text-amber-800 leading-relaxed">
+                日本の中古漁船（耐用年数超過）は「簡便法」により<strong>1年での全額償却</strong>が可能です。初年度に投資額のほぼ全額を損金算入できるため、実効税率に応じた強力なキャッシュフロー改善効果が生まれます。
+            </p>
+        </div>
+    </div>
+</section>
     </main>
 
     <script src="app.js"></script>
