@@ -140,39 +140,57 @@
         <div id="view-home" class="view-section active">
             <!-- HERO -->
             <header class="gradient-header py-24 text-white">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h1 class="text-4xl md:text-6xl font-black leading-tight mb-8">
-                                カンボジア漁業の<br>
-                                中心地に、<span class="text-amber-400">確信ある投資</span>を。
-                            </h1>
-                            <p class="text-lg text-blue-100 mb-10 leading-relaxed max-w-xl">
-                                1.5年の月日をかけ、カンボジア最大の漁業拠点「コッコン州」での合意形成を完了。
-                                政府から現場の漁業組合までを繋いだ、唯一無二の鮮魚輸送ビジネスが始動します。
-                            </p>
-                            <div class="flex flex-wrap gap-4">
-                                <div class="bg-white/10 p-4 rounded border border-white/20">
-                                    <p class="text-xs text-blue-200 uppercase font-bold tracking-widest">想定利回り</p>
-                                    <p class="text-3xl font-black text-amber-400">8.0%</p>
-                                </div>
-                                <div class="bg-white/10 p-4 rounded border border-white/20">
-                                    <p class="text-xs text-blue-200 uppercase font-bold tracking-widest">節税メリット</p>
-                                    <p class="text-3xl font-black">1年償却</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 shadow-2xl">
-                            <h3 class="text-xl font-bold mb-4 text-center text-blue-100">カンボジア海洋漁獲量シェア（州別）</h3>
-                            <div class="chart-container h-64">
-                                <canvas id="regionalChart"></canvas>
-                            </div>
-                            <div class="mt-4 p-3 bg-blue-900/50 rounded text-[10px] text-blue-300">
-                                <strong>【出典】</strong> カンボジア農林水産省水産局（FiA）年次統計報告書（Annual Report on Fisheries Sector）に基づき算出。
-                            </div>
-                        </div>
-                    </div>
+                <div class="relative bg-blue-900 py-24 text-white overflow-hidden font-sans">
+    <div class="absolute inset-0 opacity-20">
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+        <div class="absolute top-1/2 -right-24 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 text-[10px] font-black tracking-[0.2em] uppercase bg-white/10 border border-white/20 rounded-full backdrop-blur-sm">
+            <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+            1.5 Years Preparation Completed
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-black mb-8 tracking-tighter leading-tight italic">
+            カンボジアの海に、日本の資産を。<br>
+            <span class="text-blue-400 not-italic">FRP漁船リース投資</span>
+        </h1>
+
+        <p class="text-base md:text-lg text-blue-100 max-w-3xl mx-auto mb-16 leading-relaxed font-medium">
+            1.5年の歳月をかけ、カンボジア政府・地方自治体・漁業組合との独占的な協力体制を構築。<br class="hidden md:block">
+            日本の「中古資産1年償却」と、現地の「活魚需要」を繋ぎ、<br class="hidden md:block">
+            漁業近代化を促進する日本唯一のESGインパクト投資が始動します。
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="bg-gradient-to-b from-white/10 to-transparent backdrop-blur-md border border-white/20 p-8 rounded-3xl shadow-2xl group hover:border-blue-400 transition-all duration-300">
+                <p class="text-blue-300 text-[10px] font-black uppercase mb-3 tracking-[0.3em]">Yield</p>
+                <div class="flex items-baseline justify-center gap-1">
+                    <span class="text-5xl font-black">8.0</span>
+                    <span class="text-xl font-bold text-blue-300">%</span>
                 </div>
+                <p class="text-xs text-blue-200 mt-3 font-bold">想定年間利回り</p>
+            </div>
+
+            <div class="bg-gradient-to-b from-white/10 to-transparent backdrop-blur-md border border-white/20 p-8 rounded-3xl shadow-2xl group hover:border-blue-400 transition-all duration-300">
+                <p class="text-blue-300 text-[10px] font-black uppercase mb-3 tracking-[0.3em]">Tax Benefit</p>
+                <div class="flex items-baseline justify-center gap-1">
+                    <span class="text-5xl font-black">1</span>
+                    <span class="text-xl font-bold text-blue-300">年償却</span>
+                </div>
+                <p class="text-xs text-blue-200 mt-3 font-bold">中古資産による即時償却効果</p>
+            </div>
+
+            <div class="bg-gradient-to-b from-white/10 to-transparent backdrop-blur-md border border-white/20 p-8 rounded-3xl shadow-2xl group hover:border-blue-400 transition-all duration-300">
+                <p class="text-blue-300 text-[10px] font-black uppercase mb-3 tracking-[0.3em]">ESG Impact</p>
+                <div class="text-2xl font-black mt-2 mb-1 text-white">漁業近代化</div>
+                <p class="text-[10px] text-blue-400 font-black mb-2 tracking-widest">SDGs Goal 9 / 14</p>
+                <p class="text-xs text-blue-200 font-bold">海洋資源の保護と産業基盤作り</p>
+            </div>
+        </div>
+    </div>
+</div>
             </header>
 
             <!-- STRATEGY SUMMARY -->
