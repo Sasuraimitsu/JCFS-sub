@@ -1,5 +1,5 @@
 /* ==========================================
-   1. 共通設定（全ページで使用）
+   1. 共通設定
    ========================================== */
 body {
     font-family: 'Noto Sans JP', sans-serif;
@@ -20,18 +20,15 @@ body {
 .nav-link:hover { color: #1e3a8a; }
 
 /* ==========================================
-   2. ヒーローセクション（色彩心理学・トーン調整版）
+   2. ヒーローセクション
    ========================================== */
 .hero-investment {
-    /* 背景画像とグラデーションを重ねる設定 */
     background: 
         linear-gradient(rgba(2, 6, 23, 0.8), rgba(30, 58, 138, 0.8)), 
-        url('assets/hero-bg.jpg'); /* assets/ を追加 */
-    
+        url('assets/hero-bg.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* これを入れるとパララックス効果で高級感が出ます */
-    
+    background-attachment: fixed;
     padding: 140px 20px;
     color: #ffffff;
     text-align: center;
@@ -39,24 +36,20 @@ body {
     overflow: hidden;
 }
 
-/* 光の演出：不透明度を調整し、よりクリアな印象に */
-.hero-bg-light-1 {
+/* 光の演出 */
+.hero-bg-light-1, .hero-bg-light-2 {
     position: absolute;
-    top: -10%; left: -10%;
-    width: 70%; height: 70%;
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, transparent 70%);
     filter: blur(80px);
     pointer-events: none;
+}
+.hero-bg-light-1 {
+    top: -10%; left: -10%; width: 70%; height: 70%;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, transparent 70%);
     animation: float 10s ease-in-out infinite;
 }
-
 .hero-bg-light-2 {
-    position: absolute;
-    bottom: -10%; right: -10%;
-    width: 60%; height: 60%;
+    bottom: -10%; right: -10%; width: 60%; height: 60%;
     background: radial-gradient(circle, rgba(96, 165, 250, 0.25) 0%, transparent 70%);
-    filter: blur(80px);
-    pointer-events: none;
     animation: float 15s ease-in-out infinite reverse;
 }
 
@@ -65,147 +58,95 @@ body {
     50% { transform: translate(5%, 5%); }
 }
 
+/* タイトル・バッジ */
 .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 20px;
-    margin-bottom: 40px;
-    font-size: 11px;
-    font-weight: 900;
-    letter-spacing: 0.2em;
-    background: rgba(255, 255, 255, 0.15); /* 少し明るく */
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 50px;
-    backdrop-filter: blur(4px);
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 20px; margin-bottom: 40px;
+    font-size: 11px; font-weight: 900; letter-spacing: 0.2em;
+    background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px; backdrop-filter: blur(4px);
 }
-
 .hero-badge-dot {
-    width: 8px; height: 8px;
-    background: #4ade80;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #4ade80;
-    animation: pulse 2s infinite;
+    width: 8px; height: 8px; background: #4ade80; border-radius: 50%;
+    box-shadow: 0 0 10px #4ade80; animation: pulse 2s infinite;
 }
-
 @keyframes pulse {
     0%, 100% { transform: scale(1); opacity: 1; }
     50% { transform: scale(1.3); opacity: 0.6; }
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 32px;
-    letter-spacing: -0.02em;
+    font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900;
+    line-height: 1.1; margin-bottom: 32px; letter-spacing: -0.02em;
     text-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
-
 .hero-title-sub {
-    color: #c5a059; 
-    font-style: normal;
-    display: block;
-    margin-top: 15px;
+    color: #c5a059; display: block; margin-top: 15px;
     filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.3));
-    letter-spacing: 0.05em;
-    
-    /* 2行になった時のための追加設定 */
-    line-height: 1.3; 
+    letter-spacing: 0.05em; line-height: 1.3;
 }
-
 .hero-description {
-    font-size: 1.125rem;
-    line-height: 1.8;
-    color: #f1f5f9; /* より白い色へ */
-    max-width: 850px;
-    margin: 0 auto 80px;
-    font-weight: 500;
+    font-size: 1.125rem; line-height: 1.8; color: #f1f5f9;
+    max-width: 850px; margin: 0 auto 80px; font-weight: 500;
     text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
+/* ヒーローグリッド */
 .hero-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; max-width: 1100px; margin: 0 auto;
 }
-
 .hero-card {
-    background: rgba(255, 255, 255, 0.1); /* 不透明度を少しアップ */
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 40px 30px;
-    border-radius: 28px;
-    transition: all 0.3s;
+    background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25); padding: 40px 30px;
+    border-radius: 28px; transition: all 0.3s;
 }
 .hero-card:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(197, 160, 89, 0.5); /* ホバー時もブロンズ色 */
+    background: rgba(255, 255, 255, 0.15); border-color: rgba(197, 160, 89, 0.5);
     transform: translateY(-5px);
 }
-
-.hero-card-label {
-    font-size: 11px; font-weight: 900;
-    letter-spacing: 0.3em; text-transform: uppercase;
-    margin-bottom: 12px;
-    color: #93c5fd;
-}
-
-.hero-card-value {
-    font-size: 56px; font-weight: 900;
-    line-height: 1;
-}
-
-.hero-card-unit { 
-    font-size: 20px; 
-    color: #c5a059; /* ブロンズ色へ統一 */
-    margin-left: 4px; 
-}
+.hero-card-label { font-size: 11px; font-weight: 900; color: #93c5fd; text-transform: uppercase; margin-bottom: 12px; }
+.hero-card-value { font-size: 56px; font-weight: 900; line-height: 1; }
+.hero-card-unit { font-size: 20px; color: #c5a059; margin-left: 4px; }
 
 /* ==========================================
-   3. 共通コンポーネント
+   3. 共通コンポーネント & スキーム図
    ========================================== */
 .info-card {
     background: white;
     padding: 40px;
     border-radius: 20px;
-    /* 枠線を明示的に指定（Tailwindでも可能ですがCSSで書くとより確実です） */
-    border: 1px solid #e2e8f0; 
-    /* 影を少し柔らかくして、枠線を引き立たせます */
+    border: 1px solid #e2e8f0;
     box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ホバーした時に枠線の色を少し濃く（またはブランド色に）する演出 */
-.info-card:hover {
-    border-color: #c5a059; /* シャンパンブロンズの枠線に変化 */
+/* ホバー効果を一つに統合 */
+.info-card:hover, .hover-lift:hover {
+    border-color: #c5a059;
     transform: translateY(-8px);
     box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
 }
 
-.hover-lift { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-.hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
-}
-
+/* シミュレーター設定 */
 #investRange {
-    -webkit-appearance: none;
-    height: 10px; background: #e2e8f0; border-radius: 10px; outline: none;
+    -webkit-appearance: none; height: 10px; background: #e2e8f0; border-radius: 10px; outline: none;
 }
 #investRange::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 26px; height: 26px;
-    background: #a38654; /* つまみも落ち着いたブロンズへ */
-    border: 4px solid #fff; border-radius: 50%;
+    -webkit-appearance: none; width: 26px; height: 26px;
+    background: #a38654; border: 4px solid #fff; border-radius: 50%;
     cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .chart-container { position: relative; width: 100%; }
 
-/* シミュレーター内の数値を強調する色も調整 */
+/* 強調色 */
 #annualReturn, #taxSaving, #netOutlay {
-    color: #a38654 !important; /* グラフ・計算機の強調色も統一 */
+    color: #a38654 !important;
+}
+
+/* スキーム図の中央カード（Step 02）用の特別な光沢感 */
+.bg-slate-900.scale-105 {
+    box-shadow: 0 20px 40px -10px rgba(30, 58, 138, 0.5);
+    border: 2px solid #3b82f6 !important; /* 青い枠線を強調 */
 }
