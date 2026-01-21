@@ -26,53 +26,75 @@
     </nav>
 
     <main>
-        <header class="py-24 bg-slate-900 text-white relative overflow-hidden">
-            <div class="max-w-6xl mx-auto px-4 relative z-10">
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="flex-1">
-                        <span class="text-xs font-black text-amber-500 tracking-[0.4em] uppercase mb-4 block text-center md:text-left">Japanese Quality</span>
-                        <h1 class="text-4xl md:text-5xl font-black mb-8 leading-tight text-center md:text-left">
-                            日本の海が鍛え上げた、<br><span class="text-blue-400">世界最高峰のFRP資産。</span>
-                        </h1>
-                        <p class="text-slate-400 text-lg leading-relaxed font-medium">
-                            日本の中古漁船が海外で熱烈に支持される理由。それは、厳しいJCI（日本小型船舶検査機構）の基準に加え、日本の多種多様な潮流と気象条件に耐えうる「多層強化構造」にあります。私たちは、この世界基準の船体をベースに、さらなる付加価値を付与します。
-                        </p>
-                    </div>
-                    <div class="w-full md:w-1/3 bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md">
-                        <div class="text-amber-500 text-3xl mb-4 italic font-black">Life Span</div>
-                        <div class="text-5xl font-black mb-2">30-50<span class="text-xl"> Years</span></div>
-                        <p class="text-slate-400 text-xs leading-relaxed">木造船の5倍以上の寿命。FRPの劣化耐性は、新興国の漁業インフラにおいて圧倒的な競争優位性を生み出します。</p>
-                    </div>
-                </div>
+        <header class="py-24 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 text-white relative overflow-hidden">
+            <div class="max-w-6xl mx-auto px-4 relative z-10 text-center md:text-left">
+                <span class="text-xs font-black text-blue-300 tracking-[0.4em] uppercase mb-4 block">Japanese Quality</span>
+                <h1 class="text-4xl md:text-6xl font-black mb-8 leading-tight">
+                    日本の海が鍛え上げた、<br><span class="text-amber-400">世界最高峰のFRP資産。</span>
+                </h1>
+                <p class="text-blue-100/80 text-lg leading-relaxed font-medium max-w-3xl">
+                    日本の中古漁船が世界で支持される理由。それは、厳しいJCI（日本小型船舶検査機構）の基準に加え、日本の多種多様な潮流に耐えうる「多層強化構造」にあります。私たちは、この世界基準の船体をベースに、さらなる付加価値を付与します。
+                </p>
+            </div>
+            <div class="absolute inset-0 opacity-20 pointer-events-none">
+                <svg class="absolute bottom-0 left-0" width="100%" height="200" viewBox="0 0 1440 320">
+                    <path fill="#ffffff" fill-opacity="0.1" d="M0,192L48,197.3C96,203,192,213,288,192C384,171,480,117,576,128C672,139,768,213,864,224C960,235,1056,181,1152,149.3C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                </svg>
             </div>
         </header>
 
         <section class="py-24 bg-white">
             <div class="max-w-6xl mx-auto px-4">
-                <div class="flex flex-col md:flex-row-reverse items-center gap-16">
-                    <div class="flex-1">
-                        <h2 class="text-3xl font-black mb-8 border-r-4 border-amber-600 pr-6 text-right text-slate-900 uppercase tracking-tighter">
-                            現役漁師と造船所による<br>「本物」の選別基準
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-black mb-8 border-l-4 border-amber-600 pl-6 text-slate-900 leading-tight">
+                            現役漁師と造船所による<br>「本物」を射抜く選別基準
                         </h2>
-                        <p class="text-slate-600 leading-relaxed mb-6 font-medium">
-                            単なる中古市場からの仕入れではありません。私たちは<span class="text-blue-900 font-black">「現役甲賀漁港の漁師グループ」</span>と提携し、実際に海を知り尽くしたプロの視点で一隻一隻を厳密に査定します。
+                        <p class="text-slate-600 leading-relaxed mb-8 font-medium">
+                            私たちは、実際に海を知り尽くした「現役漁師グループ」と提携。単なる書類上の年数ではなく、**実稼働における性能**をプロの目利きで査定します。
                         </p>
-                        <div class="space-y-4">
-                            <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                                <h4 class="font-black text-slate-900 mb-2 flex items-center gap-2">⚓ 現場視点の機能検査</h4>
-                                <p class="text-sm text-slate-500">エンジン音の僅かな異変、ハル（船体）の目に見えない疲労、そして生け簀の配置バランス。漁師だからこそ気づく「実用的な良品」だけを厳選。</p>
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div class="shrink-0 w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center text-amber-600 font-black">1</div>
+                                <div>
+                                    <h4 class="font-black text-slate-900 mb-1">現場視点の機能検査</h4>
+                                    <p class="text-sm text-slate-500">エンジン音の微細な異変や、ハル（船体）の目に見えない疲労、生け簀の配置バランスまでを漁師が厳密に確認します。</p>
+                                </div>
                             </div>
-                            <div class="p-5 bg-slate-50 rounded-2xl border border-slate-100">
-                                <h4 class="font-black text-slate-900 mb-2 flex items-center gap-2">🛠️ 提携造船所による構造鑑定</h4>
-                                <p class="text-sm text-slate-500">専門の造船技師がFRPの積層剥離や水分含有率を科学的にチェック。輸出後の長期稼働に耐えられる個体か、根拠を持って証明します。</p>
+                            <div class="flex gap-4">
+                                <div class="shrink-0 w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 font-black">2</div>
+                                <div>
+                                    <h4 class="font-black text-slate-900 mb-1">造船技師による構造鑑定</h4>
+                                    <p class="text-sm text-slate-500">専門家がFRPの積層状態や水分含有率をチェック。数十年後の稼働を見据えた「骨格」の健全性を科学的に証明します。</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="w-full md:w-[450px]">
-                        <div class="bg-slate-200 rounded-[3rem] aspect-[3/4] flex items-center justify-center relative overflow-hidden shadow-inner group">
-                            <div class="absolute inset-0 bg-slate-800/40 group-hover:bg-slate-800/20 transition-all"></div>
-                            <span class="relative z-10 text-white font-black text-xs uppercase tracking-widest bg-slate-900/80 px-4 py-2 rounded-full">Inspection by Professional Fishermen</span>
+                    
+                    <div class="bg-slate-50 p-8 rounded-[3rem] border border-slate-200 shadow-inner">
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                                <p class="text-3xl mb-2">⚙️</p>
+                                <p class="text-[10px] font-black text-slate-400 uppercase">Engine</p>
+                                <p class="text-xs font-bold text-slate-700">燃焼・駆動系統</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                                <p class="text-3xl mb-2">🛡️</p>
+                                <p class="text-[10px] font-black text-slate-400 uppercase">Hull</p>
+                                <p class="text-xs font-bold text-slate-700">FRP積層状態</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                                <p class="text-3xl mb-2">📟</p>
+                                <p class="text-[10px] font-black text-slate-400 uppercase">System</p>
+                                <p class="text-xs font-bold text-slate-700">電装・計器類</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                                <p class="text-3xl mb-2">🐟</p>
+                                <p class="text-[10px] font-black text-slate-400 uppercase">Tank</p>
+                                <p class="text-xs font-bold text-slate-700">生け簀密閉性</p>
+                            </div>
                         </div>
+                        <p class="mt-8 text-center text-[11px] text-slate-400 font-bold uppercase tracking-[0.2em]">Comprehensive Inspection System</p>
                     </div>
                 </div>
             </div>
@@ -81,27 +103,39 @@
         <section class="py-24 bg-slate-50">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl font-black mb-4 text-slate-900">40年の歴史を刻む技術が、<br class="md:hidden">資産を再生させる。</h2>
-                    <p class="text-slate-500 font-medium">FRP漁船専門の老舗造船所による、徹底したオーバーホールと改装。</p>
+                    <h2 class="text-3xl font-black mb-4 text-slate-900 leading-tight">40年の歴史を持つ専門造船所による、<br class="hidden md:block text-slate-900">徹底した「リファイン」。</h2>
+                    <p class="text-slate-500 font-medium italic">FRP漁船の価値を再生させる、妥協なき改装技術。</p>
                 </div>
                 
-                <div class="grid md:grid-cols-2 gap-8 mb-12">
-                    <div class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-200">
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <div class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-200 hover:shadow-md transition-all">
                         <div class="text-blue-900 mb-6 flex items-center gap-3">
-                            <span class="text-4xl font-black italic opacity-20">01</span>
+                            <span class="text-4xl font-black italic opacity-20 text-blue-900">01</span>
                             <h4 class="text-xl font-black">カンボジア仕様への最適化</h4>
                         </div>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">熱帯の気候に合わせ、エンジンの冷却システムを強化。さらに、JCFSの戦略である「活魚輸送」を可能にするため、大型の循環型生け簀を独自の積層技術で増設します。</p>
-                        <div class="bg-blue-50 py-3 px-5 rounded-xl border border-blue-100 inline-block text-[11px] font-black text-blue-700 uppercase tracking-widest">Advanced Livelock System</div>
+                        <p class="text-slate-600 text-sm leading-relaxed">熱帯の気候に合わせ、エンジンの冷却システムを強化。さらに、JCFSの戦略である「活魚輸送」を可能にするため、大型の循環型生け簀を独自の技術で増設します。</p>
                     </div>
-                    <div class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-200">
+                    <div class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-200 hover:shadow-md transition-all">
                         <div class="text-blue-900 mb-6 flex items-center gap-3">
-                            <span class="text-4xl font-black italic opacity-20">02</span>
+                            <span class="text-4xl font-black italic opacity-20 text-blue-900">02</span>
                             <h4 class="text-xl font-black">船舶の「若返り」リファイン</h4>
                         </div>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">40年培ったFRP成型技術により、船体の微細なキズや経年劣化を完全に補修。塗装から電装系まで一新することで、見た目も性能も「新品に近い中古資産」へと昇華させます。</p>
-                        <div class="bg-blue-50 py-3 px-5 rounded-xl border border-blue-100 inline-block text-[11px] font-black text-blue-700 uppercase tracking-widest">Full Refurbishment</div>
+                        <p class="text-slate-600 text-sm leading-relaxed">船体のキズや経年劣化を専門の技術で完全に補修。塗装から電装系まで一新することで、見た目も性能も「新品に近い」状態へと昇華させ、数十年単位の稼働を可能にします。</p>
                     </div>
+                </div>
+
+                <div class="bg-blue-950 rounded-[2.5rem] p-10 text-white relative overflow-hidden">
+                    <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                        <div class="text-center md:text-left">
+                            <h4 class="text-2xl font-black mb-3">実際の運用資産を公開中</h4>
+                            <p class="text-blue-200 text-sm font-medium">現在運用されている個体や、投資募集中の具体的な船舶詳細をご覧いただけます。</p>
+                        </div>
+                        <a href="about.html" class="shrink-0 bg-white text-blue-900 font-black py-4 px-10 rounded-xl hover:bg-amber-50 transition-all flex items-center gap-3 shadow-xl">
+                            運用中の船舶リストを見る
+                            <span>→</span>
+                        </a>
+                    </div>
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-20 -mt-20"></div>
                 </div>
             </div>
         </section>
@@ -109,29 +143,17 @@
         <section class="py-24 bg-white overflow-hidden">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="bg-blue-900 rounded-[3rem] p-10 md:p-20 text-white relative shadow-2xl">
-                    <div class="absolute top-0 right-0 p-10 opacity-10 pointer-events-none">
-                        <svg width="200" height="200" viewBox="0 0 100 100" fill="white">
-                            <path d="M50 5 L95 25 L95 75 L50 95 L5 75 L5 25 Z" fill="none" stroke="white" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    
                     <div class="max-w-2xl relative z-10 text-center md:text-left">
                         <span class="text-amber-400 font-black text-xs tracking-widest uppercase mb-4 block">Sustainable Maintenance</span>
-                        <h3 class="text-3xl md:text-4xl font-black mb-8 leading-tight">
-                            技術を売り、誇りを遺す。<br>提携造船所による技術移転。
+                        <h3 class="text-3xl md:text-4xl font-black mb-8 leading-tight text-white">
+                            日本の誇りを遺す。<br>提携造船所による現地技術移転。
                         </h3>
                         <p class="text-blue-100/80 mb-10 leading-relaxed font-medium">
-                            私たちは船を送るだけではありません。日本の老舗造船所のエンジニアを現地に派遣し、現地のメカニックへの「技術移転」を継続的に実施。カンボジア国内で日本基準のメンテナンスが完結する体制を構築し、投資家様の資産価値を数十年単位で維持します。
+                            日本のエンジニアを現地に派遣し、現地のメカニックへの「技術移転」を継続。カンボジア国内で日本基準のメンテナンスが完結する体制を構築し、投資家様の資産価値を維持します。
                         </p>
-                        <div class="flex flex-col md:flex-row gap-6 justify-center md:justify-start">
-                            <div class="bg-white/10 p-4 rounded-2xl border border-white/20">
-                                <p class="text-[10px] uppercase font-bold text-blue-300 mb-1">Status</p>
-                                <p class="text-sm font-black italic">Training Center Established</p>
-                            </div>
-                            <div class="bg-white/10 p-4 rounded-2xl border border-white/20">
-                                <p class="text-[10px] uppercase font-bold text-blue-300 mb-1">Method</p>
-                                <p class="text-sm font-black italic">On-site Japanese Experts</p>
-                            </div>
+                        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                            <div class="bg-white/10 px-6 py-3 rounded-full border border-white/20 text-xs font-black italic">Training Center Established</div>
+                            <div class="bg-white/10 px-6 py-3 rounded-full border border-white/20 text-xs font-black italic">On-site Japanese Experts</div>
                         </div>
                     </div>
                 </div>
@@ -140,9 +162,9 @@
 
         <section class="py-20 text-center">
             <h3 class="text-2xl font-black mb-10">資産としての「正解」を、その目でお確かめください。</h3>
-            <div class="flex justify-center gap-4">
-                <a href="index.html#simulation-start" class="bg-amber-700 text-white font-black py-4 px-12 rounded-xl hover:bg-amber-800 transition-all">シミュレーションを再試行</a>
-                <a href="governance.html" class="bg-slate-900 text-white font-black py-4 px-12 rounded-xl hover:bg-slate-800 transition-all italic">Next: Governance</a>
+            <div class="flex flex-wrap justify-center gap-4 px-4">
+                <a href="index.html#simulation-start" class="bg-amber-700 text-white font-black py-4 px-12 rounded-xl hover:bg-amber-800 transition-all w-full md:w-auto">シミュレーションを再試行</a>
+                <a href="strategy.html" class="bg-slate-900 text-white font-black py-4 px-12 rounded-xl hover:bg-slate-800 transition-all w-full md:w-auto italic">Next: Why Koh Kong?</a>
             </div>
         </section>
     </main>
