@@ -1,3 +1,39 @@
+1. 共通スタイル (全ページで使用)
+/* 基本設定 */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+/* 共通ナビゲーション */
+.nav-link {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+.nav-link:hover { color: #1e40af; }
+
+/* ページ見出しの装飾 */
+.page-header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    padding: 4rem 1rem;
+    color: white;
+    text-align: center;
+}
+
+/* カードデザイン（共通） */
+.info-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+
 /* base font & smooth scroll */
 body {
     font-family: 'Noto Sans JP', sans-serif;
