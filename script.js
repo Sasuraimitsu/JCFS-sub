@@ -65,3 +65,68 @@ window.onload = () => {
     document.getElementById('investRange').addEventListener('input', updateSim);
     document.getElementById('taxRate').addEventListener('change', updateSim);
 };
+let simChart;
+
+function updateSim() {
+    const range = document.getElementById('investRange');
+    const tax = document.getElementById('taxRate');
+    const amt = parseInt(range.value);
+    const rate = parseFloat(tax.value);
+    
+    // 計算ロジック
+    const yieldAmt = amt * 0.08;
+    const savingAmt = amt * rate;
+    const netOutlay = amt - savingAmt - yieldAmt;
+
+    // テキスト更新
+    document.getElementById('investValue').innerText = '¥' + amt.toLocaleString();
+    document.getElementById('annualReturn').innerText = '¥' + Math.floor(yieldAmt).toLocaleString();
+    document.getElementById('taxSaving').innerText = '¥' + Math.floor(savingAmt).toLocaleString();
+    document.getElementById('netOutlay').innerText = '¥' + Math.floor(netOutlay).toLocaleString();
+
+    // グラフデータ更新 (5年間の累積)
+    const chartData = [
+        0, 
+        (savingAmt + yieldAmt) - amt,
+        (savingAmt + yieldAmt * 2) - amt,
+        (savingAmt + yieldAmt * 3) - amt,
+        (savingAmt + yieldAmt * 4) - amt,
+        (savingAmt + yieldAmt * 5)
+    ];
+
+    if (simChart) {
+        simChart.data.datasets[0].data = chartData;
+        simChart.update();
+    } else {
+        const ctx = document.getElementById('simChart').getContext('2d');
+        simChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['投資前', '1年目', '2年目', '3年目', '4年目', '5年目(元本)'],
+                datasets: [{
+                    data: chartData,
+                    borderColor: '#1e3a8a',
+                    backgroundColor: 'rgba(30, 58, 138, 0.05)',
+                    fill: true,
+                    tension: 0.3,
+                    pointBackgroundColor: '#b45309',
+                    pointRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { ticks: { callback: v => '¥' + (v/10000).toLocaleString() + '万' } }
+                }
+            }
+        });
+    }
+}
+
+// 初期化とイベント登録
+window.onload = () => {
+    updateSim();
+    document.getElementById('investRange').addEventListener('input', updateSim);
+    document.getElementById('taxRate').addEventListener('change', updateSim);
+};
