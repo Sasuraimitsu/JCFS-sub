@@ -150,3 +150,17 @@ body {
     box-shadow: 0 20px 40px -10px rgba(30, 58, 138, 0.5);
     border: 2px solid #3b82f6 !important; /* 青い枠線を強調 */
 }
+/* スキーム図の中央カード（Step 02）の調整 */
+.bg-blue-700.scale-105 {
+    box-shadow: 0 15px 35px -5px rgba(30, 58, 138, 0.3);
+    border: none !important; /* HTMLのborder-2を優先、または色を調整 */
+}
+
+/* 各ステップのカードに柔らかいホバー効果 */
+.flex-1.rounded-2xl {
+    transition: all 0.3s ease;
+}
+.flex-1.rounded-2xl:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
