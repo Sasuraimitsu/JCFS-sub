@@ -23,8 +23,15 @@ body {
    2. ヒーローセクション（色彩心理学・トーン調整版）
    ========================================== */
 .hero-investment {
-    /* 背景を少しだけ明るくし、グラデーションの幅を広げて開放感を出しました */
-    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e40af 100%);
+    /* 背景画像とグラデーションを重ねる設定 */
+    background: 
+        linear-gradient(rgba(2, 6, 23, 0.8), rgba(30, 58, 138, 0.8)), 
+        url('assets/hero-bg.jpg'); /* assets/ を追加 */
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* これを入れるとパララックス効果で高級感が出ます */
+    
     padding: 140px 20px;
     color: #ffffff;
     text-align: center;
