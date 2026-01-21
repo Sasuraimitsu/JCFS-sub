@@ -164,7 +164,18 @@ body {
     background: white;
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.05);
+    /* 枠線を明示的に指定（Tailwindでも可能ですがCSSで書くとより確実です） */
+    border: 1px solid #e2e8f0; 
+    /* 影を少し柔らかくして、枠線を引き立たせます */
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+/* ホバーした時に枠線の色を少し濃く（またはブランド色に）する演出 */
+.info-card:hover {
+    border-color: #c5a059; /* シャンパンブロンズの枠線に変化 */
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
 }
 
 .hover-lift { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
