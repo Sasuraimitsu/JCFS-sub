@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コッコン州詳細 - JCFS Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="page-header">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl font-black mb-4 italic">コッコン州：1.5年の合意形成プロセス</h1>
+            <p class="text-blue-100">行政のトップから漁村の最前線まで。積み上げてきた「信頼」の具体的証憑。</p>
+        </div>
+    </header>
+
+    <main class="py-16 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-4">
+            
+            <div class="info-card mb-12">
+                <h2 class="text-2xl font-black text-blue-900 mb-6 flex items-center gap-3">
+                    <span class="w-1.5 h-8 bg-blue-600 rounded-full"></span>
+                    なぜ、コッコン州なのか？
+                </h2>
+                </div>
+
+            <div class="mb-12">
+                <h3 class="text-xl font-bold text-blue-900 mb-6 flex items-center gap-2">
+                    <span class="bg-blue-900 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">A</span>
+                    Top-Down：国家レベルの承認
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-xl border border-slate-200">
+                        <h4 class="font-bold mb-2 text-slate-800">水産庁 副長官との折衝</h4>
+                        <p class="text-sm text-slate-500">国家戦略としての必要性を説き、公式なバックアップを確約。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-slate-200">
+                        <h4 class="font-bold mb-2 text-slate-800">公式な「支援要請」の獲得</h4>
+                        <p class="text-sm text-slate-500">日本大使館・水産庁を通じた公的な協力体制を構築。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-blue-900 text-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-xl font-bold mb-4">法的基盤の確立（証憑）</h3>
+                <p class="text-sm text-blue-200 leading-relaxed mb-0">
+                    水産庁（7水管第842号）および経済産業省（T-MA-25-300018）の正式な許可を取得済み。輸出および運用のリーガルリスクを完全にクリアしています。
+                </p>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="index.html#simulation" class="text-blue-600 font-bold hover:underline">← ホームに戻ってシミュレーションを行う</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
