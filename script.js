@@ -1,10 +1,16 @@
-let simChart;
+let simChart = null;
 
 function updateSim() {
+    // 要素の取得
     const rangeInput = document.getElementById('investRange');
     const taxSelect = document.getElementById('taxRate');
-    
-    if (!rangeInput || !taxSelect) return;
+    const canvas = document.getElementById('simChart');
+
+    // 要素が一つでも足りなければ処理を中断
+    if (!rangeInput || !taxSelect || !canvas) {
+        console.error("必要な要素が見つかりません。IDを確認してください。");
+        return;
+    }
 
     const amt = parseInt(rangeInput.value);
     const rate = parseFloat(taxSelect.value);
@@ -20,28 +26,31 @@ function updateSim() {
     document.getElementById('taxSaving').innerText = '¥' + Math.floor(savingAmt).toLocaleString();
     document.getElementById('netOutlay').innerText = '¥' + Math.floor(netOutlay).toLocaleString();
 
-    // グラフデータの生成 (累積キャッシュフロー)
-    const data = [
+    // 累積キャッシュフローデータ
+    const chartData = [
         0, 
-        (savingAmt + yieldAmt) - amt,        // 1年目 (節税+配当 - 投資額)
-        (savingAmt + yieldAmt * 2) - amt,    // 2年目
-        (savingAmt + yieldAmt * 3) - amt,    // 3年目
-        (savingAmt + yieldAmt * 4) - amt,    // 4年目
-        (savingAmt + yieldAmt * 5)           // 5年目 (元本返還を想定した累積)
+        (savingAmt + yieldAmt) - amt,
+        (savingAmt + (yieldAmt * 2)) - amt,
+        (savingAmt + (yieldAmt * 3)) - amt,
+        (savingAmt + (yieldAmt * 4)) - amt,
+        (savingAmt + (yieldAmt * 5))
     ];
 
+    const ctx = canvas.getContext('2d');
+
     if (simChart) {
-        simChart.data.datasets[0].data = data;
+        // 既存のグラフがあればデータを更新
+        simChart.data.datasets[0].data = chartData;
         simChart.update();
     } else {
-        const ctx = document.getElementById('simChart').getContext('2d');
+        // 初回描画
         simChart = new Chart(ctx, {
             type: 'line',
             data: {
                 labels: ['投資前', '1年目', '2年目', '3年目', '4年目', '5年目'],
                 datasets: [{
                     label: '累計キャッシュフロー',
-                    data: data,
+                    data: chartData,
                     borderColor: '#1e3a8a',
                     borderWidth: 4,
                     backgroundColor: 'rgba(30, 58, 138, 0.05)',
@@ -74,7 +83,13 @@ function updateSim() {
     }
 }
 
-// 初期実行とリスナー登録
-window.onload = updateSim;
-document.getElementById('investRange').addEventListener('input', updateSim);
-document.getElementById('taxRate').addEventListener('change', updateSim);
+// ページ読み込み完了時に実行
+document.addEventListener('DOMContentLoaded', () => {
+    updateSim();
+    
+    const rangeInput = document.getElementById('investRange');
+    const taxSelect = document.getElementById('taxRate');
+    
+    if(rangeInput) rangeInput.addEventListener('input', updateSim);
+    if(taxSelect) taxSelect.addEventListener('change', updateSim);
+});
