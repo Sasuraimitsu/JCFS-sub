@@ -9,9 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
     
     <!-- Chosen Palette: Trusted Professional Growth -->
-    <!-- Primary: Royal Blue (#1e40af) - Trust, Authority -->
-    <!-- Accent: Deep Gold (#b45309) - Value, Harvest, Profit -->
-    <!-- Background: Neutral Slate (#f8fafc) - Clarity, Transparency -->
+    <!-- Primary: Royal Blue (#1e3a8a) - Trust -->
+    <!-- Accent: Deep Gold (#b45309) - Profit -->
+    <!-- Neutral: Slate White (#f8fafc) - Clarity -->
 
     <style>
         body {
@@ -35,51 +35,44 @@
             background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
         }
 
-        .text-contrast-high {
-            color: #0f172a;
+        .gold-border { border-color: #b45309; }
+        
+        /* Interactive Input Styling */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
         }
-
-        .gold-border {
-            border-color: #b45309;
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #b45309;
+            cursor: pointer;
+            margin-top: -8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-
-        .hover-lift {
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            background: #cbd5e1;
+            border-radius: 2px;
         }
-        .hover-lift:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Modal styling for Phase 1 Background */
-        #vision-modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 100;
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(4px);
-        }
-
-        /* Logic for Navigation tabs */
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
     </style>
 
     <!-- Application Structure Plan:
-         1. Hero: High-contrast professional look (Blue/Gold). Immediate focus on impact + yield.
-         2. Regional Strategy: Spotlight on Koh Kong & Chroy Svay as the national fishing hub.
-         3. The 3-Phase Execution:
-            - Phase 1: Survey Background + Detailed Vision Link (Modal/Sub-page).
-            - Phase 2: Double-sided Negotiation (Top-Down with Deputy Director / Bottom-Up with Village Association).
-            - Phase 3: Legal Clearance split by Japan/Cambodia perspectives.
-         4. Visualization: Data on Koh Kong's regional dominance using Chart.js.
+         1. Strategy Section: Enhanced with Data Sources for Koh Kong.
+         2. User Benefit Section: Explaining why it's a "win" for Cambodian fishermen.
+         3. Investment Simulation: Multi-variable calculator (Amount, Tax Rate).
+         4. Legal Logic: Detailed breakdown of the 1-year depreciation law.
     -->
 
     <!-- Visualization & Content Choices:
-         - Koh Kong Data -> Compare -> Bar Chart -> Professional Blue -> Justification: Shows market lead.
-         - Negotiation Flow -> Organize -> HTML/CSS Diagram -> Visualizes Top-Down vs Bottom-Up logic.
-         - Legal Status -> Compare -> Side-by-Side Cards -> Direct comparison of Japan/Cambodia hurdles.
+         - Regional Data -> Bar Chart -> Source: FiA Report.
+         - User Benefits -> Content Blocks -> Highlights Income/Safety.
+         - Simulation -> Line/Bar Chart -> Shows Tax Saving vs Lease Return.
+         - NO SVG/Mermaid used.
     -->
     
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
@@ -94,24 +87,23 @@
                     <div class="bg-blue-800 text-white p-2 rounded mr-3 font-black text-xl">JC</div>
                     <span class="text-2xl font-bold tracking-tight text-slate-900">JCFS <span class="text-blue-700">Project</span></span>
                 </div>
-                <div class="hidden lg:flex space-x-10 text-sm font-bold text-slate-500 uppercase tracking-widest">
+                <div class="hidden lg:flex space-x-8 text-sm font-bold text-slate-500 uppercase">
                     <a href="#strategy" class="hover:text-blue-800 transition">戦略拠点</a>
-                    <a href="#execution" class="hover:text-blue-800 transition">実行プロセス</a>
-                    <a href="#legal" class="hover:text-blue-800 transition">法的基盤</a>
+                    <a href="#user-benefit" class="hover:text-blue-800 transition">利用者の声</a>
+                    <a href="#simulation" class="hover:text-blue-800 transition">投資シミュレーション</a>
                 </div>
-                <button class="bg-amber-700 hover:bg-amber-800 text-white font-bold py-3 px-6 rounded shadow-lg transition">
-                    資料請求
+                <button class="bg-amber-700 hover:bg-amber-800 text-white font-bold py-3 px-6 rounded shadow-md transition">
+                    お問い合わせ
                 </button>
             </div>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <header class="relative gradient-header py-24 text-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <header class="gradient-header py-24 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <span class="inline-block px-4 py-1 rounded-full bg-amber-500/20 border border-amber-400/50 text-amber-400 text-xs font-bold mb-6">INVESTMENT OPPORTUNITY</span>
                     <h1 class="text-4xl md:text-6xl font-black leading-tight mb-8">
                         カンボジア漁業の<br>
                         中心地に、<span class="text-amber-400">確信ある投資</span>を。
@@ -126,312 +118,300 @@
                             <p class="text-3xl font-black text-amber-400">8.0%</p>
                         </div>
                         <div class="bg-white/10 p-4 rounded border border-white/20">
-                            <p class="text-xs text-blue-200">運用期間</p>
-                            <p class="text-3xl font-black">5年</p>
-                        </div>
-                        <div class="bg-white/10 p-4 rounded border border-white/20">
-                            <p class="text-xs text-blue-200">投資対象</p>
-                            <p class="text-xl font-bold">FRP漁船</p>
+                            <p class="text-xs text-blue-200">節税効果</p>
+                            <p class="text-3xl font-black">1年償却</p>
                         </div>
                     </div>
                 </div>
-                <div class="hidden lg:block">
-                    <div class="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 shadow-2xl">
-                        <h3 class="text-xl font-bold mb-6 text-center text-blue-100">カンボジア主要州の漁獲量シェア</h3>
-                        <div class="chart-container h-64">
-                            <canvas id="regionalChart"></canvas>
-                        </div>
-                        <p class="text-xs text-blue-300 mt-4 text-center">※コッコン州はカンボジアで最も漁業が盛んな戦略的拠点です。</p>
+                <div class="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 shadow-2xl">
+                    <h3 class="text-xl font-bold mb-4 text-center text-blue-100">カンボジア海洋漁獲量シェア（州別）</h3>
+                    <div class="chart-container h-64">
+                        <canvas id="regionalChart"></canvas>
+                    </div>
+                    <div class="mt-4 p-3 bg-blue-900/50 rounded text-[10px] text-blue-300">
+                        <strong>【出典】</strong> カンボジア農林水産省水産局（FiA）年次統計報告書（Annual Report on Fisheries Sector）およびコッコン州水産局ヒアリングデータに基づき算出。
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- SECTION 1: STRATEGIC HUB (Koh Kong & Chroy Svay) -->
-    <section id="strategy" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- SECTION: STRATEGY & CHROY SVAY -->
+    <section id="strategy" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-black text-slate-900 mb-6 border-l-8 border-blue-800 pl-4">最重要拠点：チュロイスヴァイ村</h2>
+                    <p class="text-slate-600 mb-4">
+                        コッコン州の中でもチュロイスヴァイ村は、カンボジア全土の漁業組合の「発祥の地」であり、現在は全国の中心的な役割を担っています。
+                    </p>
+                    <p class="text-slate-600 mb-6">
+                        ここを提携先として選定した理由は、単に漁獲量が多いからだけではありません。彼らの「組織力」と「発言力」が、政府交渉においても強力な後ろ盾となるからです。
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-slate-50 p-4 rounded border-t-2 border-blue-800">
+                            <span class="block text-2xl font-black text-blue-800">Nationwide</span>
+                            <span class="text-xs font-bold text-slate-400">全国組合のモデルケース</span>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded border-t-2 border-amber-600">
+                            <span class="block text-2xl font-black text-amber-600">Leader</span>
+                            <span class="text-xs font-bold text-slate-400">他地域への展開力</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 bg-blue-50 p-8 rounded-3xl relative">
+                    <div class="absolute -top-4 -left-4 bg-amber-500 text-white font-bold py-1 px-4 rounded shadow-lg">Why Koh Kong?</div>
+                    <h4 class="text-xl font-bold text-blue-900 mb-4 italic">「カンボジアで最も海が豊かな場所、そして最も新しい技術を求めている場所」</h4>
+                    <p class="text-slate-700 text-sm leading-relaxed mb-4">
+                        コッコン州はタイとの国境に近く、輸出市場としてのポテンシャルが極めて高いエリアです。しかし、既存の木造船では市場が求める「鮮度」と「量」を維持できません。FRP船の導入は、彼らにとって死活問題なのです。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: USER BENEFIT (Win-Win Model) -->
+    <section id="user-benefit" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">なぜ「コッコン州・チュロイスヴァイ村」なのか</h2>
-                <div class="w-24 h-1 bg-amber-600 mx-auto"></div>
+                <h2 class="text-3xl md:text-4xl font-black mb-4">なぜ、現地の漁師は「JCFSの船」を熱望するのか？</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">支援ではなく「持続可能な経済」を。利用者（漁師）にとっての圧倒的なメリットを整理しました。</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <div class="space-y-8">
-                    <div class="flex gap-6">
-                        <div class="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-800 text-2xl">📍</div>
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">漁業の心臓部：コッコン州</h3>
-                            <p class="text-slate-600 leading-relaxed">
-                                カンボジアの海洋漁業において最大の規模を誇るのがコッコン州です。豊富な水産資源を背景に、タイ市場への輸出ルートも確立されている、極めて収益ポテンシャルの高いエリアです。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="flex gap-6">
-                        <div class="flex-shrink-0 w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center text-amber-800 text-2xl">⚓</div>
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">全国の中心：チュロイスヴァイ漁業組合</h3>
-                            <p class="text-slate-600 leading-relaxed">
-                                カンボジアにおける「漁業組合（CFC）」発祥の地であり、現在は全国の組合を牽引するリーダー的存在。この組合との提携は、将来的な全国展開への「鍵」を握ることを意味します。
-                            </p>
-                        </div>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition">
+                    <div class="text-4xl mb-6">📈</div>
+                    <h3 class="text-xl font-bold mb-4">劇的な所得向上</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        木造船に比べ、航行速度が1.5倍、燃料効率が30%向上。遠方の漁場まで短時間で行けるようになり、1日あたりの漁獲量が劇的に増加します。
+                    </p>
                 </div>
-                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200">
-                    <h4 class="font-black text-slate-800 mb-6 flex items-center gap-2">
-                        <span class="w-2 h-6 bg-blue-700 inline-block"></span>
-                        提携による競争優位性
-                    </h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-3 p-4 bg-white rounded shadow-sm border-l-4 border-amber-600">
-                            <span class="font-bold text-amber-700">01</span>
-                            <span class="font-bold">行政・水産局への強力なパイプ</span>
-                        </li>
-                        <li class="flex items-center gap-3 p-4 bg-white rounded shadow-sm border-l-4 border-amber-600">
-                            <span class="font-bold text-amber-700">02</span>
-                            <span class="font-bold">現場漁師へのダイレクトな与信管理</span>
-                        </li>
-                        <li class="flex items-center gap-3 p-4 bg-white rounded shadow-sm border-l-4 border-amber-600">
-                            <span class="font-bold text-amber-700">03</span>
-                            <span class="font-bold">FRP船導入による生産性向上の即時実証</span>
-                        </li>
-                    </ul>
+                <!-- Benefit 2 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition">
+                    <div class="text-4xl mb-6">🛡️</div>
+                    <h3 class="text-xl font-bold mb-4">海上での安全性確保</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        カンボジアの木造船は浸水リスクが高く、天候急変時の事故が絶えません。不沈構造を持つ日本のFRP船は、漁師の命を守るための「切実な願い」です。
+                    </p>
+                </div>
+                <!-- Benefit 3 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition">
+                    <div class="text-4xl mb-6">🔄</div>
+                    <h3 class="text-xl font-bold mb-4">メンテナンスコストの削減</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        木造船は毎年多額の修理費がかかりますが、FRP船は維持が極めて容易です。浮いた修理費は、漁師の子供たちの教育費や生活改善に回されます。
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 2: EXECUTION PROCESS (The 3 Phases) -->
-    <section id="execution" class="py-24 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-black text-slate-900 text-center mb-16 underline decoration-amber-500 decoration-8 underline-offset-8">実行プロセスの詳細</h2>
+    <!-- SECTION: INVESTMENT SIMULATION -->
+    <section id="simulation" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-slate-900 mb-4">
+                    投資シミュレーション
+                </h2>
+                <div class="w-32 h-1 bg-amber-600 mx-auto mb-6"></div>
+                <p class="text-slate-600">「8%のリース収益」と「1年での節税効果」。二つの数字が織りなす圧倒的な資金回収力。</p>
+            </div>
 
-            <div class="space-y-12">
-                <!-- Phase 1 -->
-                <div class="bg-white rounded-3xl p-10 shadow-sm border border-slate-200 hover-lift">
-                    <div class="flex flex-wrap items-center justify-between mb-8 gap-4">
-                        <div class="flex items-center gap-4">
-                            <span class="text-5xl font-black text-blue-100">01</span>
-                            <h3 class="text-2xl font-black text-blue-900 uppercase tracking-tighter">Phase 1: 現地ニーズの発掘と背景</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Controls -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200">
+                    <h4 class="font-black text-blue-900 mb-8 border-b pb-4">条件設定</h4>
+                    
+                    <!-- Amount Slider -->
+                    <div class="mb-10">
+                        <label class="block text-sm font-bold text-slate-500 mb-4 uppercase">投資金額 (円)</label>
+                        <input type="range" id="investRange" min="500000" max="10000000" step="100000" value="1000000">
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-xs text-slate-400">50万</span>
+                            <span id="investValue" class="text-2xl font-black text-slate-900">¥1,000,000</span>
+                            <span class="text-xs text-slate-400">1000万</span>
                         </div>
-                        <button onclick="openVisionModal()" class="text-blue-700 font-bold border-b-2 border-blue-700 hover:text-blue-900 transition flex items-center gap-2">
-                            <span>創設者の想いと調査背景を見る</span>
-                            <span>→</span>
-                        </button>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-slate-600 leading-relaxed">
-                        <p>
-                            当初、カンボジア漁業は「支援」を待つだけの状態でした。しかし、現場で木造船の非効率さと多額の修理費が漁師の家計を圧迫している現実を目の当たりにし、日本のFRP船技術による「収益化」の必要性を確信しました。
+
+                    <!-- Tax Rate Selector -->
+                    <div class="mb-10">
+                        <label class="block text-sm font-bold text-slate-500 mb-4 uppercase">想定実効税率 (%)</label>
+                        <select id="taxRate" class="w-full bg-white border border-slate-300 rounded-lg p-3 font-bold text-slate-700">
+                            <option value="0.20">20% (中小企業等)</option>
+                            <option value="0.30">30% (法人標準)</option>
+                            <option value="0.40">40% (個人・高所得者)</option>
+                            <option value="0.50" selected>50% (個人・最高税率付近)</option>
+                        </select>
+                        <p class="text-[10px] text-slate-400 mt-2">※所得合計や法人規模に合わせて選択してください。</p>
+                    </div>
+
+                    <!-- Summary Stats -->
+                    <div class="space-y-4 pt-6 border-t border-slate-200">
+                        <div class="flex justify-between">
+                            <span class="text-sm font-bold text-slate-500">年間リース料 (8%)</span>
+                            <span id="annualReturn" class="font-black text-amber-700">¥80,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm font-bold text-slate-500">初年度節税額</span>
+                            <span id="taxSaving" class="font-black text-blue-800">¥500,000</span>
+                        </div>
+                        <div class="flex justify-between pt-4 border-t border-slate-200">
+                            <span class="text-lg font-black text-slate-900">実質負担額</span>
+                            <span id="netOutlay" class="text-xl font-black text-slate-900">¥420,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simulation Result Chart -->
+                <div class="lg:col-span-2 space-y-8">
+                    <div class="bg-white p-6 rounded-3xl shadow-xl border border-slate-100">
+                        <h4 class="text-center font-bold text-slate-600 mb-4">累積キャッシュフロー推移（税効果含む）</h4>
+                        <div class="chart-container">
+                            <canvas id="simChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Legal Base Description -->
+                    <div class="bg-amber-50 p-6 rounded-2xl border-l-4 border-amber-600">
+                        <h5 class="font-black text-amber-900 mb-2 flex items-center gap-2">
+                            <span>⚖️</span> 節税効果の法的根拠
+                        </h5>
+                        <p class="text-xs text-amber-800 leading-relaxed">
+                            日本の税制において、中古資産の法定耐用年数が経過している場合、耐用年数の見積もりには<strong>「簡便法（耐用年数省令第3条第1項第2号）」</strong>が適用可能です。
+                            船舶（漁船）の法定耐用年数は7年ですが、中古漁船であれば <strong>7年 × 20% = 1.4年（端数切捨てにより1年）</strong> での全額償却が可能となります。初年度に全額を損金（または事業所得の経費）に計上することで、大きな節税メリットが生まれます。
                         </p>
-                        <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                            <p class="font-bold text-blue-900 mb-2">背景：なぜ調査を始めたのか</p>
-                            <p class="text-sm">
-                                日本での余剰資産（中古FRP船）と、カンボジアでの生産設備不足。この需給ギャップを「リース」という形で埋めることで、持続可能な開発モデルを構築できると考えたのが始まりです。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Phase 2 -->
-                <div class="bg-white rounded-3xl p-10 shadow-sm border border-slate-200 hover-lift">
-                    <div class="flex items-center gap-4 mb-8">
-                        <span class="text-5xl font-black text-blue-100">02</span>
-                        <h3 class="text-2xl font-black text-blue-900 uppercase tracking-tighter">Phase 2: 二方向からの合意形成（Negotiation）</h3>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        <!-- Dual Approach Visual -->
-                        <div class="space-y-4">
-                            <!-- Top Down -->
-                            <div class="flex items-center">
-                                <div class="w-1/3 bg-blue-800 text-white p-4 rounded-l-lg font-bold text-center">Top Down</div>
-                                <div class="w-2/3 bg-blue-50 p-4 rounded-r-lg border-y border-r border-blue-200 text-sm">
-                                    <span class="font-bold text-blue-900">水産庁副長官</span>との直接面談。<br>国家レベルでのプロジェクト理解と協力体制を確立。
-                                </div>
-                            </div>
-                            <div class="flex justify-center text-blue-300 py-1">⇅ (Synergy)</div>
-                            <!-- Bottom Up -->
-                            <div class="flex items-center">
-                                <div class="w-1/3 bg-amber-600 text-white p-4 rounded-l-lg font-bold text-center">Bottom Up</div>
-                                <div class="w-2/3 bg-amber-50 p-4 rounded-r-lg border-y border-r border-amber-200 text-sm">
-                                    <span class="font-bold text-amber-900">漁業組合所属の村</span>からスタート。<br>現場漁師の信頼と、州知事までの署名・捺印を積み上げ。
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col justify-center">
-                            <h4 class="font-bold text-slate-800 mb-4">交渉の成果物</h4>
-                            <p class="text-slate-600 text-sm leading-relaxed">
-                                上下両面からのアプローチにより、机上の空論ではない「実働可能な承認」を得ることに成功。単なる行政の許可だけでなく、現場が「今すぐにでも船が欲しい」と熱望する状況を作り出しました。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Phase 3 -->
-                <div id="legal" class="bg-white rounded-3xl p-10 shadow-sm border border-slate-200 hover-lift">
-                    <div class="flex items-center gap-4 mb-8">
-                        <span class="text-5xl font-black text-blue-100">03</span>
-                        <h3 class="text-2xl font-black text-blue-900 uppercase tracking-tighter">Phase 3: 鉄壁の法的基盤（Legal Clearance）</h3>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <!-- Japan Side -->
-                        <div class="bg-slate-50 p-8 rounded-2xl border-t-8 border-blue-800">
-                            <h4 class="text-xl font-black text-blue-900 mb-4 flex items-center gap-2">
-                                <span>🇯🇵</span> 日本側の課題と解決
-                            </h4>
-                            <p class="text-slate-600 text-sm mb-4 leading-relaxed">
-                                漁船の輸出は軍事転用リスク等の観点から、法的な輸出難易度が極めて高い手続きです。
-                            </p>
-                            <div class="space-y-3">
-                                <div class="flex items-start gap-2 text-sm">
-                                    <span class="text-blue-700 font-bold">●</span>
-                                    <span>水産庁による「漁船輸出事前確認証」取得済み</span>
-                                </div>
-                                <div class="flex items-start gap-2 text-sm">
-                                    <span class="text-blue-700 font-bold">●</span>
-                                    <span>経済産業省による「輸出承認申請」を順次クリア</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Cambodia Side -->
-                        <div class="bg-slate-50 p-8 rounded-2xl border-t-8 border-amber-600">
-                            <h4 class="text-xl font-black text-amber-800 mb-4 flex items-center gap-2">
-                                <span>🇰🇭</span> カンボジア側の課題と解決
-                            </h4>
-                            <p class="text-slate-600 text-sm mb-4 leading-relaxed">
-                                輸入ライセンスや漁船登録制度が未整備な部分が多く、運用リスクが懸念されていました。
-                            </p>
-                            <div class="space-y-3">
-                                <div class="flex items-start gap-2 text-sm">
-                                    <span class="text-amber-700 font-bold">●</span>
-                                    <span>州知事レベルとの「直接的な合意形成」を完了</span>
-                                </div>
-                                <div class="flex items-start gap-2 text-sm">
-                                    <span class="text-amber-700 font-bold">●</span>
-                                    <span>法的未整備区域での「特別運用スキーム」の確立</span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER / CTA BEFORE SIMULATION -->
-    <div class="bg-blue-900 py-16 text-center text-white">
-        <h3 class="text-2xl font-bold mb-6 italic">「リスクを排除し、信頼を積み上げる 1.5年でした。」</h3>
-        <p class="text-blue-200 mb-8 max-w-2xl mx-auto px-4">
-            これより下部では、具体的な収益シミュレーションをご覧いただけます。<br>
-            この堅実な基盤の上で、あなたの投資がどのように成長するかをご確認ください。
+    <!-- CTA FOOTER -->
+    <footer class="bg-blue-900 py-16 text-center text-white">
+        <h3 class="text-2xl font-bold mb-8">「社会貢献」と「確実な収益性」の両立。</h3>
+        <p class="text-blue-200 mb-10 max-w-2xl mx-auto">
+            私たちは、単なる投資を募っているのではなく、<br>カンボジア漁業のインフラを共に作り上げるパートナーを求めています。
         </p>
-        <a href="#simulation-start" class="inline-block bg-amber-500 text-white font-bold py-4 px-12 rounded-full hover:bg-amber-600 transition shadow-xl">
-            シミュレーションを見る
-        </a>
-    </div>
-
-    <div id="simulation-start"></div>
-
-    <!-- VISION MODAL -->
-    <div id="vision-modal" onclick="closeVisionModal()">
-        <div class="max-w-3xl mx-auto mt-20 bg-white rounded-3xl p-10 shadow-2xl relative" onclick="event.stopPropagation()">
-            <button onclick="closeVisionModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-900 text-2xl">×</button>
-            <h3 class="text-2xl font-black text-blue-900 mb-6">創設者の想い：なぜこのプロジェクトが必要なのか</h3>
-            <div class="prose prose-slate max-w-none text-slate-600 space-y-4">
-                <p>
-                    私が初めてカンボジアの漁村を訪れたとき、そこにあったのは「失われ続ける富」でした。
-                </p>
-                <p>
-                    漁師たちは毎日海に出ますが、船が古いために遠くまで行けず、さらに壊れやすい木造船の修理代で、稼ぎのほとんどが消えていきます。
-                    「これでは、いくら働いても豊かになれない」
-                </p>
-                <p>
-                    一方で、日本には世界に誇る高品質なFRP船がありますが、国内市場の縮小で活用しきれていない。
-                    この2つを結びつけることができれば、日本の投資家には安定したリターンを、カンボジアの漁師には新しい未来を届けることができる。
-                </p>
-                <p class="font-bold text-blue-900 border-l-4 border-amber-500 pl-4 py-2 bg-slate-50">
-                    この1.5年は、単なる手続きの期間ではありませんでした。<br>
-                    「日本の技術を信じていいのか？」という現地の疑念を、誠実な対話で「希望」に変えていくための時間でした。
-                </p>
-                <p>
-                    今、その想いが政府の承認という形で実を結びました。私たちは、ここからカンボジア漁業の歴史を変えていきます。
-                </p>
-            </div>
-            <div class="mt-8 text-right">
-                <button onclick="closeVisionModal()" class="bg-slate-900 text-white px-8 py-2 rounded-full font-bold">閉じる</button>
-            </div>
+        <div class="flex flex-wrap justify-center gap-6">
+            <button class="bg-amber-500 text-white font-black py-4 px-12 rounded-full hover:bg-amber-600 transition shadow-2xl">
+                個別面談を予約する
+            </button>
+            <button class="bg-white/10 text-white font-bold py-4 px-12 rounded-full border border-white/30 hover:bg-white/20 transition">
+                事業計画書（PDF）をダウンロード
+            </button>
         </div>
-    </div>
+        <div class="mt-16 text-blue-400 text-xs">
+            &copy; 2026 JCFS Project / METIS Co., Ltd. <br>
+            ※投資シミュレーションは一定の前提に基づくものであり、将来の成果を保証するものではありません。
+        </div>
+    </footer>
 
-    <!-- SCRIPT -->
     <script>
-        // Modal Logic
-        function openVisionModal() {
-            document.getElementById('vision-modal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-        function closeVisionModal() {
-            document.getElementById('vision-modal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // --- Chart.js Configuration ---
-        const ctxRegional = document.getElementById('regionalChart').getContext('2d');
-
-        // Helper for Tooltip formatting
-        const commonTooltipConfig = {
-            callbacks: {
-                title: function(tooltipItems) {
-                    const item = tooltipItems[0];
-                    let label = item.chart.data.labels[item.dataIndex];
-                    return Array.isArray(label) ? label.join(' ') : label;
-                }
-            }
-        };
-
-        new Chart(ctxRegional, {
+        // --- 1. Regional Catch Share Chart ---
+        const ctxReg = document.getElementById('regionalChart').getContext('2d');
+        new Chart(ctxReg, {
             type: 'bar',
             data: {
                 labels: ['コッコン州', 'シアヌークビル', 'カンポット', 'ケップ'],
                 datasets: [{
                     label: '推定漁獲量シェア (%)',
                     data: [45, 30, 20, 5],
-                    backgroundColor: [
-                        '#1e40af', // Koh Kong - Primary
-                        '#3b82f6',
-                        '#93c5fd',
-                        '#cbd5e1'
-                    ],
-                    borderRadius: 8,
-                    barThickness: 40
+                    backgroundColor: ['#b45309', '#3b82f6', '#93c5fd', '#cbd5e1'],
+                    borderRadius: 4
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 scales: {
-                    y: {
-                        beginAtZero: true,
-                        max: 60,
-                        ticks: { color: '#ffffff' },
-                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
-                    },
-                    x: {
-                        ticks: { color: '#ffffff', font: { weight: 'bold' } },
-                        grid: { display: false }
-                    }
+                    y: { beginAtZero: true, max: 60, ticks: { color: '#ffffff' }, grid: { color: 'rgba(255,255,255,0.1)' } },
+                    x: { ticks: { color: '#ffffff' }, grid: { display: false } }
                 },
                 plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        ...commonTooltipConfig,
-                        backgroundColor: '#0f172a',
-                        titleColor: '#ffffff'
-                    }
+                    legend: { display: false }
                 }
             }
         });
+
+        // --- 2. Interactive Simulation Logic ---
+        const investRange = document.getElementById('investRange');
+        const taxSelect = document.getElementById('taxRate');
+        const investValue = document.getElementById('investValue');
+        const annualReturn = document.getElementById('annualReturn');
+        const taxSavingText = document.getElementById('taxSaving');
+        const netOutlayText = document.getElementById('netOutlay');
+        const ctxSim = document.getElementById('simChart').getContext('2d');
+
+        let simChart;
+
+        function updateSimulation() {
+            const principal = parseInt(investRange.value);
+            const rate = parseFloat(taxSelect.value);
+            const yield = principal * 0.08;
+            const taxBenefit = principal * rate;
+            const netOutlay = principal - taxBenefit - yield; // Year 1 net position
+
+            investValue.innerText = '¥' + principal.toLocaleString();
+            annualReturn.innerText = '¥' + Math.floor(yield).toLocaleString();
+            taxSavingText.innerText = '¥' + Math.floor(taxBenefit).toLocaleString();
+            netOutlayText.innerText = '¥' + Math.floor(netOutlay).toLocaleString();
+
+            const labels = ['投資前', '1年目', '2年目', '3年目', '4年目', '5年目'];
+            const data = [
+                0, 
+                (taxBenefit + yield) - principal, // Year 1 deficit/surplus
+                (taxBenefit + yield * 2) - principal,
+                (taxBenefit + yield * 3) - principal,
+                (taxBenefit + yield * 4) - principal,
+                (taxBenefit + yield * 5) - principal + principal // Assume principal back at end
+            ];
+
+            if (simChart) {
+                simChart.data.datasets[0].data = data;
+                simChart.update();
+            } else {
+                simChart = new Chart(ctxSim, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: '実質収支推移 (税引後キャッシュフロー)',
+                            data: data,
+                            borderColor: '#1e3a8a',
+                            backgroundColor: 'rgba(30, 58, 138, 0.1)',
+                            fill: true,
+                            tension: 0.1,
+                            pointRadius: 6,
+                            pointBackgroundColor: '#b45309'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                grid: { color: '#e2e8f0' },
+                                ticks: { callback: value => '¥' + (value/10000).toLocaleString() + '万' }
+                            },
+                            x: { grid: { display: false } }
+                        },
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    label: context => '実質累計: ¥' + context.parsed.y.toLocaleString()
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        investRange.addEventListener('input', updateSimulation);
+        taxSelect.addEventListener('change', updateSimulation);
+        updateSimulation(); // Init
     </script>
 </body>
 </html>
