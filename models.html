@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>モデル一覧 | JCFS Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; }
+        .nav-link { font-weight: 500; color: #475569; transition: all 0.2s; }
+        .nav-link:hover { color: #1e40af; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="sticky top-0 w-full z-50 bg-white/95 border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center no-underline">
+                <img src="assets/metis-logo.jpg" alt="株式会社METIS" class="h-10 w-auto mr-3 object-contain">
+                <span class="text-2xl font-bold text-slate-900 tracking-tighter italic">JCFS <span class="text-slate-500 not-italic font-medium">Project</span></span>
+            </a>
+
+            <div id="nav-menu" class="hidden lg:flex space-x-8">
+                <a href="index.html" class="nav-link">ホーム</a>
+                <a href="tech.html" class="nav-link">深掘り No1 Which Asset?</a>
+                <a href="strategy.html" class="nav-link">深掘り No2 Why Koh Kong?</a>
+                <a href="governance.html" class="nav-link">深掘り No3 How to governance?</a>
+            </div>
+
+            <a href="https://line.me/R/ti/p/WA5-yz4DJQ" target="_blank" rel="noopener noreferrer" 
+               class="bg-[#06C755] hover:bg-[#05a346] text-white font-bold py-2.5 px-6 rounded shadow-md transition-all no-underline">
+                お問い合わせ
+            </a>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 md:px-6 py-12">
+        <div class="mb-12 border-l-4 border-blue-900 pl-6">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">モデル一覧</h1>
+            <p class="text-lg text-slate-600 max-w-3xl">
+                カンボジアの漁業スタイルに合わせたFRP船モデルの一覧です。日本の中古資産を再生し、現地のニーズに最適化した仕様をご提案します。
+            </p>
+        </div>
+
+        <div id="cards" class="grid gap-6 md:hidden"></div>
+
+        <div class="hidden md:block bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-slate-900 text-white">
+                        <th class="px-6 py-4 font-semibold">写真</th>
+                        <th class="px-6 py-4 font-semibold">船名</th>
+                        <th class="px-6 py-4 font-semibold">サイズ</th>
+                        <th class="px-6 py-4 font-semibold">エンジン</th>
+                        <th class="px-6 py-4 font-semibold">主要装備</th>
+                        <th class="px-6 py-4 font-semibold text-center">詳細</th>
+                    </tr>
+                </thead>
+                <tbody id="rows" class="divide-y divide-slate-100"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-20 py-8">
+        <p class="text-center text-slate-500 text-sm">&copy; 2026 JCFS Project / METIS Co., Ltd. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // データ定義
+        const SHIPS = [
+            {
+                name: "敏五丸",
+                size: "2.0t / 9.15m",
+                engine: "ヤンマー 6PHシリーズ",
+                equip: "活魚槽 / 魚探 / GPS",
+                thumb: "assets/boats/toshigomaru/01.jpg",
+                detailUrl: "model-toshigomaru.html"
+            },
+            {
+                name: "第1和丸",
+                size: "2.25t / 9.30m",
+                engine: "三菱 M6H-MTK",
+                equip: "活魚槽 / 自動航行 / 無線",
+                thumb: "assets/boats/kazumaru/01.jpg",
+                detailUrl: "model-kazumaru.html"
+            },
+            {
+                name: "第3祐勢丸",
+                size: "4.07t / 9.16m",
+                engine: "いすゞ UM6BG1TC",
+                equip: "活魚槽 / 魚探 / 無線",
+                thumb: "assets/boats/yuseimaru/01.jpg",
+                detailUrl: "model-yuseimaru.html"
+            },
+            {
+                name: "幸栄丸",
+                size: "2.27t / 8.40m",
+                engine: "コマツ EM63BA-A",
+                equip: "活魚槽 / GPS / 自動航行",
+                thumb: "assets/boats/koeimaru/01.jpg",
+                detailUrl: "model-koeimaru.html"
+            },
+            {
+                name: "第2正洋丸",
+                size: "2.3t / 8.45m",
+                engine: "いすゞ UM4BG1シリーズ",
+                equip: "活魚槽 / 方向探知機 / 無線",
+                thumb: "assets/boats/seiyomaru/01.jpg",
+                detailUrl: "model-seiyomaru.html"
+            }
+        ];
+
+        function render() {
+            const cards = document.getElementById("cards");
+            const rows = document.getElementById("rows");
+
+            SHIPS.forEach(ship => {
+                // スマホ用カード
+                cards.innerHTML += `
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                        <img src="${ship.thumb}" alt="${ship.name}" class="w-full h-48 object-cover">
+                        <div class="p-5">
+                            <h3 class="text-xl font-bold mb-2">${ship.name}</h3>
+                            <div class="text-sm text-slate-600 space-y-1 mb-4">
+                                <p><span class="font-semibold text-slate-900">サイズ:</span> ${ship.size}</p>
+                                <p><span class="font-semibold text-slate-900">エンジン:</span> ${ship.engine}</p>
+                                <p><span class="font-semibold text-slate-900">装備:</span> ${ship.equip}</p>
+                            </div>
+                            <a href="${ship.detailUrl}" class="block text-center bg-blue-900 text-white font-bold py-2 rounded-lg">詳細を見る</a>
+                        </div>
+                    </div>
+                `;
+
+                // PC用行
+                rows.innerHTML += `
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-6 py-4"><img src="${ship.thumb}" class="w-20 h-14 object-cover rounded shadow-sm"></td>
+                        <td class="px-6 py-4 font-bold text-slate-900">${ship.name}</td>
+                        <td class="px-6 py-4 text-sm text-slate-600">${ship.size}</td>
+                        <td class="px-6 py-4 text-sm text-slate-600">${ship.engine}</td>
+                        <td class="px-6 py-4 text-sm text-slate-600">${ship.equip}</td>
+                        <td class="px-6 py-4 text-center">
+                            <a href="${ship.detailUrl}" class="inline-block bg-slate-100 hover:bg-blue-900 hover:text-white text-slate-700 text-sm font-bold py-2 px-4 rounded transition-all">詳細</a>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        // ナビゲーションの下線制御スクリプト
+        document.addEventListener("DOMContentLoaded", () => {
+            render();
+            const currentPath = window.location.pathname.split("/").pop() || "index.html";
+            const navLinks = document.querySelectorAll("#nav-menu .nav-link");
+            navLinks.forEach(link => {
+                if (link.getAttribute("href") === currentPath) {
+                    link.classList.add("text-blue-800", "border-b-2", "border-blue-800");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
