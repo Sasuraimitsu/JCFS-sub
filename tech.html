@@ -5,30 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asset Spec & Technology | JCFS Project</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Noto Sans JP', sans-serif; }
         .nav-link { font-size: 0.875rem; font-weight: 700; color: #64748b; transition: all 0.3s; text-decoration: none; }
         .nav-link:hover { color: #1e40af; }
-        .pillar-card {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 1.5rem;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s ease;
-        }
-        .pillar-card:hover {
-            border-color: #1e40af;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            height: 350px;
-            margin: auto;
-        }
     </style>
 </head>
 <body class="antialiased text-[#0f172a] bg-[#f8fafc]">
@@ -57,419 +38,418 @@
 
     <main>
         <!-- Hero Section -->
-<section class="max-w-5xl mx-auto px-4 pt-20 pb-12 text-center">
-    <div class="text-xs font-black text-blue-600 tracking-[0.4em] uppercase mb-4">Deep Dive 01</div>
-    <h1 class="text-5xl font-black text-slate-900 leading-tight mb-6">
-        なぜ、「日本製」「中古」FRP漁船なのか？
-    </h1>
-    <p class="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-        日本製FRP船の圧倒的な耐久性と独自の再生技術、<br>
-        そして収益を生む「生け簀」という武器。<br>
-        中古漁船が高付加価値資産となる、3つの理由を解説します。
-    </p>
-</section>
-
-<!-- FRPとは何か（新規追加） -->
-<section class="max-w-6xl mx-auto px-4 py-16 bg-gradient-to-br from-slate-50 to-blue-50">
-    <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-10">
-            <div class="inline-block px-4 py-2 bg-slate-700 text-white font-black rounded-full mb-4 text-sm">
-                基礎知識
-            </div>
-            <h2 class="text-3xl font-black text-slate-900 mb-4">
-                そもそも「FRP」とは？
-            </h2>
-        </div>
-        
-        <!-- FRPの説明 -->
-        <div class="bg-white p-8 rounded-2xl shadow-lg border-2 border-slate-200 mb-8">
-            <div class="flex items-start gap-4 mb-6">
-                <div class="text-4xl">🔬</div>
-                <div>
-                    <h3 class="text-xl font-black text-slate-900 mb-3">
-                        FRP = Fiber Reinforced Plastics（繊維強化プラスチック）
-                    </h3>
-                    <p class="text-slate-700 leading-relaxed mb-4">
-                        ガラス繊維などの強化繊維と樹脂を組み合わせた複合材料。軽量でありながら鋼鉄に匹敵する強度を持ち、腐食や錆に強いという特性があります。
-                    </p>
-                    <p class="text-slate-700 leading-relaxed">
-                        日本では1960年代から漁船の船体材料として広く採用され、半世紀以上の実績を持つ「実証済みの素材」です。
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 木造船との比較 -->
-        <div class="grid md:grid-cols-3 gap-6 mb-8">
-            <div class="bg-white p-6 rounded-xl border-2 border-slate-200 text-center">
-                <div class="text-3xl mb-3">🪵</div>
-                <h4 class="font-black text-slate-900 mb-3">木造船</h4>
-                <div class="space-y-2 text-sm text-slate-600">
-                    <div class="flex items-center gap-2">
-                        <span class="text-red-500">✗</span>
-                        <span>腐食・浸水しやすい</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-red-500">✗</span>
-                        <span>寿命：5〜8年</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-red-500">✗</span>
-                        <span>重量が大きい</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-red-500">✗</span>
-                        <span>頻繁なメンテナンス</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="bg-white p-6 rounded-xl border-2 border-slate-200 text-center">
-                <div class="text-3xl mb-3">⚙️</div>
-                <h4 class="font-black text-slate-900 mb-3">鉄・鋼製船</h4>
-                <div class="space-y-2 text-sm text-slate-600">
-                    <div class="flex items-center gap-2">
-                        <span class="text-orange-500">△</span>
-                        <span>錆びやすい</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-orange-500">△</span>
-                        <span>寿命：15〜20年</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-red-500">✗</span>
-                        <span>非常に重い</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-orange-500">△</span>
-                        <span>塗装・防錆が必要</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border-4 border-blue-500 text-center shadow-lg">
-                <div class="text-3xl mb-3">🚢</div>
-                <h4 class="font-black text-blue-900 mb-3">FRP船</h4>
-                <div class="space-y-2 text-sm text-slate-700 font-bold">
-                    <div class="flex items-center gap-2">
-                        <span class="text-green-600">✓</span>
-                        <span>腐食・錆びない</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-green-600">✓</span>
-                        <span>寿命：30年以上</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-green-600">✓</span>
-                        <span>軽量（燃費良好）</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-green-600">✓</span>
-                        <span>メンテナンス最小</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- なぜ日本製FRP船なのか -->
-<div class="bg-blue-900 text-white p-8 rounded-2xl">
-    <h3 class="text-2xl font-black mb-4 text-center">
-        🇯🇵 なぜ「日本製」FRP船なのか？
-    </h3>
-    <div class="grid md:grid-cols-2 gap-6">
-        <div>
-            <h4 class="font-black text-amber-300 text-sm mb-2">01. 多層強化構造</h4>
-            <p class="text-sm text-blue-100 leading-relaxed">
-                日本の厳しい海域で長年稼働してきた漁船は、複数層のFRPを積層した強固な構造。単層構造の安価なFRP船とは耐久性が根本的に異なります。
+        <section class="max-w-5xl mx-auto px-4 pt-20 pb-12 text-center">
+            <div class="text-xs font-black text-blue-600 tracking-[0.4em] uppercase mb-4">Deep Dive 01</div>
+            <h1 class="text-5xl font-black text-slate-900 leading-tight mb-6">
+                なぜ「日本製」「中古」<br>FRP漁船なのか？
+            </h1>
+            <p class="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+                日本製FRP船の圧倒的な耐久性と独自の再生技術、<br>
+                そして収益を生む「生け簀」という武器。<br>
+                中古漁船が高付加価値資産となる理由を解説します。
             </p>
-        </div>
-        
-        <div>
-            <h4 class="font-black text-amber-300 text-sm mb-2">04. 「日本製」ブランドの信頼性</h4>
-            <p class="text-sm text-blue-100 leading-relaxed">
-                ベトナムでは自国の新造船より「壊れない日本の中古船」が高値で取引される事例が多数。「日本製」というブランドが資産価値を下支えします。
-            </p>
-        </div>
-    </div>
-</div>
+        </section>
 
-        <!-- 新造 vs 中古の比較（追加オプション） -->
-<div class="bg-white p-8 rounded-2xl border-2 border-blue-200 mt-8">
-    <h3 class="text-xl font-black text-slate-900 mb-6 text-center">
-        💡 新造船 vs 中古船
-    </h3>
-    
-    <div class="overflow-x-auto">
-        <table class="w-full text-sm">
-            <thead>
-                <tr class="border-b-2 border-slate-300">
-                    <th class="p-4 text-left font-black text-slate-700">比較項目</th>
-                    <th class="p-4 text-center font-black text-slate-500 bg-slate-50">新造FRP船</th>
-                    <th class="p-4 text-center font-black text-blue-900 bg-blue-50">日本の中古FRP船</th>
-                </tr>
-            </thead>
-            <tbody class="text-sm">
-                <tr class="border-b border-slate-200">
-                    <td class="p-4 font-bold text-slate-700">初期投資額</td>
-                    <td class="p-4 text-center text-slate-600">数千万円〜億単位</td>
-                    <td class="p-4 text-center font-bold text-blue-900 bg-blue-50">新造の1/5〜1/10</td>
-                </tr>
-                <tr class="border-b border-slate-200">
-                    <td class="p-4 font-bold text-slate-700">稼働開始まで</td>
-                    <td class="p-4 text-center text-slate-600">6ヶ月〜1年以上</td>
-                    <td class="p-4 text-center font-bold text-blue-900 bg-blue-50">改修後すぐ（1〜2ヶ月）</td>
-                </tr>
+        <!-- FRPとは何か -->
+        <section class="max-w-6xl mx-auto px-4 py-16 bg-gradient-to-br from-slate-50 to-blue-50">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-10">
+                    <div class="inline-block px-4 py-2 bg-slate-700 text-white font-black rounded-full mb-4 text-sm">
+                        基礎知識
+                    </div>
+                    <h2 class="text-3xl font-black text-slate-900 mb-4">
+                        そもそも「FRP」とは？
+                    </h2>
+                </div>
                 
-                <tr>
-                    <td class="p-4 font-bold text-slate-700">投資リスク</td>
-                    <td class="p-4 text-center text-slate-600">高額投資・長期回収</td>
-                    <td class="p-4 text-center font-bold text-blue-900 bg-blue-50">低額投資・早期収益化</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    
-    <div class="mt-6 p-4 bg-amber-50 border-2 border-amber-300 rounded-lg">
-        <p class="text-sm text-amber-900 font-bold text-center">
-            ⚡ 中古だからこそ実現する「低リスク・高効率・即収益化」
-        </p>
-    </div>
-</div>
+                <!-- FRPの説明 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-2 border-slate-200 mb-8">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="text-4xl">🔬</div>
+                        <div>
+                            <h3 class="text-xl font-black text-slate-900 mb-3">
+                                FRP = Fiber Reinforced Plastics（繊維強化プラスチック）
+                            </h3>
+                            <p class="text-slate-700 leading-relaxed mb-4">
+                                ガラス繊維などの強化繊維と樹脂を組み合わせた複合材料。軽量でありながら鋼鉄に匹敵する強度を持ち、腐食や錆に強いという特性があります。
+                            </p>
+                            <p class="text-slate-700 leading-relaxed">
+                                日本では1960年代から漁船の船体材料として広く採用され、半世紀以上の実績を持つ「実証済みの素材」です。
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-        
-    </div>
-</section>
+                <!-- 木造船との比較 -->
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-xl border-2 border-slate-200 text-center">
+                        <div class="text-3xl mb-3">🪵</div>
+                        <h4 class="font-black text-slate-900 mb-3">木造船</h4>
+                        <div class="space-y-2 text-sm text-slate-600">
+                            <div class="flex items-center gap-2">
+                                <span class="text-red-500">✗</span>
+                                <span>腐食・浸水しやすい</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-red-500">✗</span>
+                                <span>寿命：5〜8年</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-red-500">✗</span>
+                                <span>重量が大きい</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-red-500">✗</span>
+                                <span>頻繁なメンテナンス</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl border-2 border-slate-200 text-center">
+                        <div class="text-3xl mb-3">⚙️</div>
+                        <h4 class="font-black text-slate-900 mb-3">鉄・鋼製船</h4>
+                        <div class="space-y-2 text-sm text-slate-600">
+                            <div class="flex items-center gap-2">
+                                <span class="text-orange-500">△</span>
+                                <span>錆びやすい</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-orange-500">△</span>
+                                <span>寿命：15〜20年</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-red-500">✗</span>
+                                <span>非常に重い</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-orange-500">△</span>
+                                <span>塗装・防錆が必要</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border-4 border-blue-500 text-center shadow-lg">
+                        <div class="text-3xl mb-3">🚢</div>
+                        <h4 class="font-black text-blue-900 mb-3">FRP船</h4>
+                        <div class="space-y-2 text-sm text-slate-700 font-bold">
+                            <div class="flex items-center gap-2">
+                                <span class="text-green-600">✓</span>
+                                <span>腐食・錆びない</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-green-600">✓</span>
+                                <span>寿命：30年以上</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-green-600">✓</span>
+                                <span>軽量（燃費良好）</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-green-600">✓</span>
+                                <span>メンテナンス最小</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- なぜ日本製「中古」FRP船なのか -->
+                <div class="bg-blue-900 text-white p-8 rounded-2xl mb-8">
+                    <h3 class="text-2xl font-black mb-4 text-center">
+                        🇯🇵 なぜ「日本製」「中古」FRP船なのか？
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-black text-amber-300 text-sm mb-2">01. 多層強化構造</h4>
+                            <p class="text-sm text-blue-100 leading-relaxed">
+                                日本の厳しい海域で長年稼働してきた漁船は、複数層のFRPを積層した強固な構造。単層構造の安価なFRP船とは耐久性が根本的に異なります。
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-amber-300 text-sm mb-2">02. 実績による証明</h4>
+                            <p class="text-sm text-blue-100 leading-relaxed">
+                                日本国内で20〜30年稼働してきた実績が、その圧倒的な耐久性を証明。カンボジアの海でさらに30年稼働できる「証明済みの資産」です。
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-amber-300 text-sm mb-2">03. 圧倒的なコスト優位性</h4>
+                            <p class="text-sm text-blue-100 leading-relaxed">
+                                新造FRP船の建造費用は数千万円〜億単位。中古船は同等の性能を持ちながら、価格は新造の1/5〜1/10。初期投資を大幅に抑えられます。
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-amber-300 text-sm mb-2">04. 即座に稼働可能</h4>
+                            <p class="text-sm text-blue-100 leading-relaxed">
+                                新造船の建造には6ヶ月〜1年以上が必要。中古船は既に存在するため、改修後すぐに現地へ投入でき、収益化までの時間を大幅に短縮できます。
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-amber-300 text-sm mb-2">05. 独自の生け簀構造</h4>
+                            <p class="text-sm text-blue-100 leading-relaxed">
+                                船体に組み込まれた自然循環式生け簀は日本独自の設計。活魚輸送により、魚価を2〜5倍に引き上げる「収益装置」として機能します。
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-amber-300 text-sm mb-2">06. 「日本製」ブランドの信頼性</h4>
+                            <p class="text-sm text-blue-100 leading-relaxed">
+                                ベトナムでは自国の新造船より「壊れない日本の中古船」が高値で取引される事例が多数。「日本製」というブランドが資産価値を下支えします。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 新造 vs 中古の比較 -->
+                <div class="bg-white p-8 rounded-2xl border-2 border-blue-200">
+                    <h3 class="text-xl font-black text-slate-900 mb-6 text-center">
+                        💡 新造船 vs 中古船
+                    </h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="border-b-2 border-slate-300">
+                                    <th class="p-4 text-left font-black text-slate-700">比較項目</th>
+                                    <th class="p-4 text-center font-black text-slate-500 bg-slate-50">新造FRP船</th>
+                                    <th class="p-4 text-center font-black text-blue-900 bg-blue-50">日本の中古FRP船</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm">
+                                <tr class="border-b border-slate-200">
+                                    <td class="p-4 font-bold text-slate-700">初期投資額</td>
+                                    <td class="p-4 text-center text-slate-600">数千万円〜億単位</td>
+                                    <td class="p-4 text-center font-bold text-blue-900 bg-blue-50">新造の1/5〜1/10</td>
+                                </tr>
+                                <tr class="border-b border-slate-200">
+                                    <td class="p-4 font-bold text-slate-700">稼働開始まで</td>
+                                    <td class="p-4 text-center text-slate-600">6ヶ月〜1年以上</td>
+                                    <td class="p-4 text-center font-bold text-blue-900 bg-blue-50">改修後すぐ（1〜2ヶ月）</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-bold text-slate-700">投資リスク</td>
+                                    <td class="p-4 text-center text-slate-600">高額投資・長期回収</td>
+                                    <td class="p-4 text-center font-bold text-blue-900 bg-blue-50">低額投資・早期収益化</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-amber-50 border-2 border-amber-300 rounded-lg">
+                        <p class="text-sm text-amber-900 font-bold text-center">
+                            ⚡ 中古だからこそ実現する「低リスク・高効率・即収益化」
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- 理由1：圧倒的な耐久性 -->
-<section class="max-w-6xl mx-auto px-4 py-16 bg-slate-50">
-    <div class="text-center mb-12">
-        <div class="inline-block px-4 py-2 bg-blue-600 text-white font-black rounded-full mb-4">
-            理由 01
-        </div>
-        <h2 class="text-3xl font-black text-slate-900">
-            日本製FRP船の圧倒的な耐久性
-        </h2>
-        <p class="text-slate-600 mt-4">
-            木造船の5〜8年に対し、日本製FRP船は30年以上稼働
-        </p>
-    </div>
-    
-    <!-- 比較テーブル -->
-    <div class="grid md:grid-cols-2 gap-8 mb-12">
-        <div class="bg-slate-200 p-8 rounded-2xl text-center">
-            <div class="text-4xl mb-4">🪵</div>
-            <h3 class="text-xl font-black text-slate-700 mb-4">現地の木造船</h3>
-            <div class="space-y-3 text-left">
-                <div class="flex items-start gap-2">
-                    <span class="text-red-500 font-black">✗</span>
-                    <span class="text-sm text-slate-600">寿命：5〜8年で腐食・浸水</span>
+        <section class="max-w-6xl mx-auto px-4 py-16 bg-slate-50">
+            <div class="text-center mb-12">
+                <div class="inline-block px-4 py-2 bg-blue-600 text-white font-black rounded-full mb-4">
+                    理由 01
                 </div>
-                <div class="flex items-start gap-2">
-                    <span class="text-red-500 font-black">✗</span>
-                    <span class="text-sm text-slate-600">重量：燃料コスト高</span>
-                </div>
-                <div class="flex items-start gap-2">
-                    <span class="text-red-500 font-black">✗</span>
-                    <span class="text-sm text-slate-600">メンテナンス：頻繁な修繕が必要</span>
-                </div>
-            </div>
-        </div>
-        
-        <div class="bg-blue-50 border-2 border-blue-600 p-8 rounded-2xl text-center shadow-lg">
-            <div class="text-4xl mb-4">🚢</div>
-            <h3 class="text-xl font-black text-blue-900 mb-4">日本製FRP船（中古）</h3>
-            <div class="space-y-3 text-left">
-                <div class="flex items-start gap-2">
-                    <span class="text-green-600 font-black">✓</span>
-                    <span class="text-sm text-slate-700 font-bold">寿命：30年以上の実績</span>
-                </div>
-                <div class="flex items-start gap-2">
-                    <span class="text-green-600 font-black">✓</span>
-                    <span class="text-sm text-slate-700 font-bold">軽量：燃料コスト30-40%削減</span>
-                </div>
-                <div class="flex items-start gap-2">
-                    <span class="text-green-600 font-black">✓</span>
-                    <span class="text-sm text-slate-700 font-bold">不沈構造：メンテナンス最小</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="bg-white p-6 rounded-xl border-2 border-slate-200">
-        <h4 class="font-black text-slate-900 mb-3">🔬 FRPの物理的特性</h4>
-        <p class="text-sm text-slate-600 leading-relaxed">
-            多層強化FRP（繊維強化プラスチック）は、木材と異なり腐食・浸水しない素材。日本の厳しい海で長年稼働してきた実績が、その圧倒的な耐久性を証明しています。
-        </p>
-    </div>
-</section>
-
-        <!-- 理由2：選別と再生技術 -->
-<section class="max-w-6xl mx-auto px-4 py-16">
-    <div class="text-center mb-12">
-        <div class="inline-block px-4 py-2 bg-blue-600 text-white font-black rounded-full mb-4">
-            理由 02
-        </div>
-        <h2 class="text-3xl font-black text-slate-900">
-            徹底した選別と「完全リフレッシュ」
-        </h2>
-        <p class="text-slate-600 mt-4">
-            プロの目利き × 日本国内での徹底オーバーホール
-        </p>
-    </div>
-    
-    <div class="grid md:grid-cols-3 gap-6">
-        <!-- ステップ1 -->
-        <div class="bg-slate-50 p-6 rounded-xl border-2 border-slate-200">
-            <div class="text-2xl mb-3">🔍</div>
-            <h3 class="font-black text-slate-900 mb-3">STEP 1: 厳格な選別</h3>
-            <p class="text-sm text-slate-600">
-                漁師グループと造船技師による徹底検査。船体の経年劣化診断、機関系の再生可能性を評価し、長期稼働できる個体のみを選別。
-            </p>
-        </div>
-        
-        <!-- ステップ2 -->
-        <div class="bg-slate-50 p-6 rounded-xl border-2 border-slate-200">
-            <div class="text-2xl mb-3">⚙️</div>
-            <h3 class="font-black text-slate-900 mb-3">STEP 2: 完全オーバーホール</h3>
-            <p class="text-sm text-slate-600">
-                日本国内でエンジン・発電機を点検整備。消耗品は新品に交換し、電装系を刷新。新造並みの稼働信頼性を実現。
-            </p>
-        </div>
-        
-        <!-- ステップ3 -->
-        <div class="bg-slate-50 p-6 rounded-xl border-2 border-slate-200">
-            <div class="text-2xl mb-3">🎨</div>
-            <h3 class="font-black text-slate-900 mb-3">STEP 3: カンボジア最適化</h3>
-            <p class="text-sm text-slate-600">
-                船体研磨・再塗装、防汚処理で燃費向上。現地の過酷な環境に適応する改装を施し、即戦力として提供。
-            </p>
-        </div>
-    </div>
-</section>
-
-       <!-- 理由3：生け簀という武器 -->
-<section class="max-w-6xl mx-auto px-4 py-16 bg-blue-50">
-    <div class="text-center mb-12">
-        <div class="inline-block px-4 py-2 bg-amber-600 text-white font-black rounded-full mb-4">
-            理由 03（最重要）
-        </div>
-        <h2 class="text-3xl font-black text-slate-900">
-            収益を劇的に変える「生け簀」という武器
-        </h2>
-        <p class="text-slate-600 mt-4">
-            「氷で冷やす」から「生け簀で活かす」へ
-        </p>
-    </div>
-    
-    <!-- 価格比較 -->
-    <div class="max-w-4xl mx-auto mb-12">
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-slate-100 p-8 rounded-2xl text-center">
-                <div class="text-3xl mb-3">🧊</div>
-                <h3 class="text-xl font-black text-slate-700 mb-2">死魚（氷詰め）</h3>
-                <div class="text-4xl font-black text-slate-500 mb-2">$1.25〜$10</div>
-                <div class="text-xs text-slate-600">1kgあたり</div>
+                <h2 class="text-3xl font-black text-slate-900">
+                    日本製FRP船の圧倒的な耐久性
+                </h2>
+                <p class="text-slate-600 mt-4">
+                    木造船の5〜8年に対し、日本製FRP船は30年以上稼働
+                </p>
             </div>
             
-            <div class="bg-gradient-to-br from-amber-100 to-amber-50 border-4 border-amber-400 p-8 rounded-2xl text-center shadow-xl">
-                <div class="text-3xl mb-3">🐟</div>
-                <h3 class="text-xl font-black text-amber-900 mb-2">活魚（生け簀）</h3>
-                <div class="text-4xl font-black text-amber-700 mb-2">$12〜$20</div>
-                <div class="text-xs text-amber-800 font-bold">市場価値 2〜5倍</div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="bg-white p-8 rounded-xl border-2 border-blue-200 max-w-4xl mx-auto">
-        <h4 class="font-black text-slate-900 mb-4 text-center">🌊 自然循環式生け簀の仕組み</h4>
-        <div class="grid md:grid-cols-2 gap-6">
-            <div>
-                <h5 class="font-black text-blue-900 text-sm mb-2">✓ エネルギー不要</h5>
-                <p class="text-sm text-slate-600">
-                    走行時の水圧を利用して海水を循環。高価なポンプや電力なしで活魚を運べる日本独自の設計。
-                </p>
-            </div>
-            <div>
-                <h5 class="font-black text-blue-900 text-sm mb-2">✓ インフラの弱さを強みに</h5>
-                <p class="text-sm text-slate-600">
-                    電力・製氷設備が不安定なカンボジアで、船体そのものが鮮度保持装置として機能。
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-        <!-- 理由3：生け簀という武器 の後に追加 -->
-<div class="max-w-6xl mx-auto px-4 py-8">
-    <div class="bg-white p-8 rounded-xl border-2 border-slate-200">
-        <h4 class="font-black text-slate-900 mb-4 text-center">💰 資産価値が維持される理由</h4>
-        <div class="grid md:grid-cols-2 gap-6 text-sm">
-            <div>
-                <h5 class="font-black text-blue-900 mb-2">輸入コストの資産価値化</h5>
-                <p class="text-slate-600">
-                    日本からの輸送費と法的許可プロセスにかかるコスト。現地で「即戦力」として存在する船体は、これら時間と費用を代替する価値として資産価格に内包されます。
-                </p>
-            </div>
-            <div>
-                <h5 class="font-black text-blue-900 mb-2">現地メンテナンス体制</h5>
-                <p class="text-slate-600">
-                    日本の技術移転により、現地で適切なメンテナンスが可能。長期稼働を支える体制が資産価値を守ります。
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-        <!-- まとめ -->
-<section class="max-w-5xl mx-auto px-4 py-16 text-center">
-    <h2 class="text-3xl font-black text-slate-900 mb-6">
-        日本製FRP船 = 長期稼働する「高効率・低減価資産」
-    </h2>
-    <p class="text-lg text-slate-600 leading-relaxed mb-8">
-        圧倒的な耐久性 × 徹底した再生技術 × 収益を生む生け簀。<br>
-        この3つが揃うことで、中古でも高付加価値資産として成立します。
-    </p>
-    
-    <div class="flex gap-4 justify-center mb-12">
-        <a href="index.html#simulation-start" class="px-8 py-4 bg-blue-600 text-white rounded-xl font-black hover:bg-blue-700">
-            投資シミュレーションへ
-        </a>
-        <a href="strategy.html" class="px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-xl font-black hover:bg-blue-50">
-            次：何故、この地域に？
-        </a>
-    </div>
-
-    <!-- 調査報告書・エビデンス（ここに移動） -->
-    <div class="mt-16 pt-12 border-t border-slate-200">
-        <h4 class="text-sm font-black text-slate-900 mb-8 uppercase tracking-widest">調査報告書・エビデンス</h4>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-            <div class="space-y-3">
-                <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest border-b pb-2">Market Data</p>
-                <a href="https://asia.apolloduck.com/" target="_blank" class="block text-xs text-blue-600 font-bold hover:underline">Apollo Duck (Asia) - 世界の漁船参考市場</a>
-                <a href="https://dailyboats.com/" target="_blank" class="block text-xs text-blue-600 font-bold hover:underline">DailyBoats (Asia) - 地域別中古相場</a>
-            </div>
-            <div class="space-y-3">
-                <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest border-b pb-2">Policy & History</p>
-                <div class="space-y-4">
-                    <div class="space-y-1">
-                        <p class="text-[11px] text-slate-600 font-medium">ベトナム政令67号</p>
-                        <a href="https://vanban.chinhphu.vn/" target="_blank" class="block text-xs text-blue-600 font-bold hover:underline">ベトナム政府ポータル</a>
+            <!-- 比較テーブル -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-slate-200 p-8 rounded-2xl text-center">
+                    <div class="text-4xl mb-4">🪵</div>
+                    <h3 class="text-xl font-black text-slate-700 mb-4">現地の木造船</h3>
+                    <div class="space-y-3 text-left">
+                        <div class="flex items-start gap-2">
+                            <span class="text-red-500 font-black">✗</span>
+                            <span class="text-sm text-slate-600">寿命：5〜8年で腐食・浸水</span>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <span class="text-red-500 font-black">✗</span>
+                            <span class="text-sm text-slate-600">重量：燃料コスト高</span>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <span class="text-red-500 font-black">✗</span>
+                            <span class="text-sm text-slate-600">メンテナンス：頻繁な修繕が必要</span>
+                        </div>
                     </div>
-                    <div class="space-y-1">
-                        <a href="https://www.fao.org/fishery/en/countrysector/kh/en" target="_blank" class="block text-xs text-blue-600 font-bold hover:underline">FAO カンボジア漁業レポート</a>
+                </div>
+                
+                <div class="bg-blue-50 border-2 border-blue-600 p-8 rounded-2xl text-center shadow-lg">
+                    <div class="text-4xl mb-4">🚢</div>
+                    <h3 class="text-xl font-black text-blue-900 mb-4">日本製FRP船（中古）</h3>
+                    <div class="space-y-3 text-left">
+                        <div class="flex items-start gap-2">
+                            <span class="text-green-600 font-black">✓</span>
+                            <span class="text-sm text-slate-700 font-bold">寿命：30年以上の実績</span>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <span class="text-green-600 font-black">✓</span>
+                            <span class="text-sm text-slate-700 font-bold">軽量：燃料コスト30-40%削減</span>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <span class="text-green-600 font-black">✓</span>
+                            <span class="text-sm text-slate-700 font-bold">不沈構造：メンテナンス最小</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="space-y-3">
-                <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest border-b pb-2">Legal Clearance</p>
-                <a href="https://www.marine-jbia.or.jp/" target="_blank" class="block text-xs text-blue-600 font-bold hover:underline">一般社団法人 日本舟艇工業会</a>
-                <p class="text-[10px] text-slate-500 italic">証憑：7水管第842号 / T-MA-25-300018</p>
+            
+            <div class="bg-white p-6 rounded-xl border-2 border-slate-200">
+                <h4 class="font-black text-slate-900 mb-3">🔬 FRPの物理的特性</h4>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    多層強化FRP（繊維強化プラスチック）は、木材と異なり腐食・浸水しない素材。日本の厳しい海で長年稼働してきた実績が、その圧倒的な耐久性を証明しています。
+                </p>
             </div>
-        </div>
-    </div>
-</section>  
-              
-                        
-        <!-- SECTION: 技術移転 -->
+        </section>
+
+        <!-- 理由2：選別と再生技術 -->
+        <section class="max-w-6xl mx-auto px-4 py-16">
+            <div class="text-center mb-12">
+                <div class="inline-block px-4 py-2 bg-blue-600 text-white font-black rounded-full mb-4">
+                    理由 02
+                </div>
+                <h2 class="text-3xl font-black text-slate-900">
+                    徹底した選別と「完全リフレッシュ」
+                </h2>
+                <p class="text-slate-600 mt-4">
+                    プロの目利き × 日本国内での徹底オーバーホール
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- ステップ1 -->
+                <div class="bg-slate-50 p-6 rounded-xl border-2 border-slate-200">
+                    <div class="text-2xl mb-3">🔍</div>
+                    <h3 class="font-black text-slate-900 mb-3">STEP 1: 厳格な選別</h3>
+                    <p class="text-sm text-slate-600">
+                        漁師グループと造船技師による徹底検査。船体の経年劣化診断、機関系の再生可能性を評価し、長期稼働できる個体のみを選別。
+                    </p>
+                </div>
+                
+                <!-- ステップ2 -->
+                <div class="bg-slate-50 p-6 rounded-xl border-2 border-slate-200">
+                    <div class="text-2xl mb-3">⚙️</div>
+                    <h3 class="font-black text-slate-900 mb-3">STEP 2: 完全オーバーホール</h3>
+                    <p class="text-sm text-slate-600">
+                        日本国内でエンジン・発電機を点検整備。消耗品は新品に交換し、電装系を刷新。新造並みの稼働信頼性を実現。
+                    </p>
+                </div>
+                
+                <!-- ステップ3 -->
+                <div class="bg-slate-50 p-6 rounded-xl border-2 border-slate-200">
+                    <div class="text-2xl mb-3">🎨</div>
+                    <h3 class="font-black text-slate-900 mb-3">STEP 3: カンボジア最適化</h3>
+                    <p class="text-sm text-slate-600">
+                        船体研磨・再塗装、防汚処理で燃費向上。現地の過酷な環境に適応する改装を施し、即戦力として提供。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 理由3：生け簀という武器 -->
+        <section class="max-w-6xl mx-auto px-4 py-16 bg-blue-50">
+            <div class="text-center mb-12">
+                <div class="inline-block px-4 py-2 bg-amber-600 text-white font-black rounded-full mb-4">
+                    理由 03（最重要）
+                </div>
+                <h2 class="text-3xl font-black text-slate-900">
+                    収益を劇的に変える「生け簀」という武器
+                </h2>
+                <p class="text-slate-600 mt-4">
+                    「氷で冷やす」から「生け簀で活かす」へ
+                </p>
+            </div>
+            
+            <!-- 価格比較 -->
+            <div class="max-w-4xl mx-auto mb-12">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-slate-100 p-8 rounded-2xl text-center">
+                        <div class="text-3xl mb-3">🧊</div>
+                        <h3 class="text-xl font-black text-slate-700 mb-2">死魚（氷詰め）</h3>
+                        <div class="text-4xl font-black text-slate-500 mb-2">$1.25〜$10</div>
+                        <div class="text-xs text-slate-600">1kgあたり</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-amber-100 to-amber-50 border-4 border-amber-400 p-8 rounded-2xl text-center shadow-xl">
+                        <div class="text-3xl mb-3">🐟</div>
+                        <h3 class="text-xl font-black text-amber-900 mb-2">活魚（生け簀）</h3>
+                        <div class="text-4xl font-black text-amber-700 mb-2">$12〜$20</div>
+                        <div class="text-xs text-amber-800 font-bold">市場価値 2〜5倍</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-xl border-2 border-blue-200 max-w-4xl mx-auto">
+                <h4 class="font-black text-slate-900 mb-4 text-center">🌊 自然循環式生け簀の仕組み</h4>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h5 class="font-black text-blue-900 text-sm mb-2">✓ エネルギー不要</h5>
+                        <p class="text-sm text-slate-600">
+                            走行時の水圧を利用して海水を循環。高価なポンプや電力なしで活魚を運べる日本独自の設計。
+                        </p>
+                    </div>
+                    <div>
+                        <h5 class="font-black text-blue-900 text-sm mb-2">✓ インフラの弱さを強みに</h5>
+                        <p class="text-sm text-slate-600">
+                            電力・製氷設備が不安定なカンボジアで、船体そのものが鮮度保持装置として機能。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- まとめ + エビデンス -->
+        <section class="max-w-5xl mx-auto px-4 py-16 text-center">
+            <h2 class="text-3xl font-black text-slate-900 mb-6">
+                日本製FRP船 = 長期稼働する「高効率・低減価資産」
+            </h2>
+            <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                圧倒的な耐久性 × 徹底した再生技術 × 収益を生む生け簀。<br>
+                この3つが揃うことで、中古でも高付加価値資産として成立します。
+            </p>
+            
+            <div class="flex gap-4 justify-center mb-16">
+                <a href="index.html#simulation-start" class="px-8 py-4 bg-blue-600 text-white rounded-xl font-black hover:bg-blue-700 no-underline">
+                    投資シミュレーションへ
+                </a>
+                <a href="strategy.html" class="px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-xl font-black hover:bg-blue-50 no-underline">
+                    次：何故、この地域に？
+                </a>
+            </div>
+
+            <!-- 調査報告書・エビデンス -->
+            <div class="pt-12 border-t border-slate-200">
+                <h4 class="text-sm font-black text-slate-900 mb-8 uppercase tracking-widest">調査報告書・エビデンス</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                    <div class="space-y-3">
+                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest border-b pb-2">Market Data</p>
+                        <a href="https://asia.apolloduck.com/" target="_blank" class="block text-xs text-blue-600 font-bold hover:underline no-underline">Apollo Duck (Asia) - 世界の漁船参考市場</a>
+                        <a href="https://dailyboats.com/" target="_blank" class="block text-xs text-blue-600 font-bold hover:underline no-underline">DailyBoats (Asia) - 地域別中古相場</a>
+                    </div>
+                    <div class="space-y-3">
+                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest border-b pb-2">Policy & History</p>
+                        <div class="space-y-4">
+                            <div class="space-y-1">
+                                <p class="text-[11px] text-slate-600 font-medium">ベトナム政令67号</p>
+                                <a href="https://vanban.chinhphu.vn/" target="_blank" class="block text-xs text-blue-600 font-bold hover:underline no-underline">ベトナム政府ポータル</a>
+                            </div>
+                            <div class="space-y-1">
+                                <a href="https://www.fao.org/fishery/en/countrysector/kh/en" target="_blank" class="block text-xs text-blue-600 font-bold hover:underline no-underline">FAO カンボジア漁業レポート</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest border-b pb-2">Legal Clearance</p>
+                        <a href="https://www.marine-jbia.or.jp/" target="_blank" class="block text-xs text-blue-600 font-bold hover:underline no-underline">一般社団法人 日本舟艇工業会</a>
+                        <p class="text-[10px] text-slate-500 italic">証憑：7水管第842号 / T-MA-25-300018</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技術移転 -->
         <section class="py-24 bg-slate-50">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="bg-blue-900 rounded-[3rem] p-10 md:p-20 text-white relative shadow-2xl overflow-hidden">
@@ -493,5 +473,30 @@
         <p class="text-slate-500 text-xs font-bold">© 2026 JCFS Project / METIS Co., Ltd. All Rights Reserved.</p>
     </footer>
 
-   </body>
+</body>
 </html>
+```
+
+---
+
+## 改善のポイント
+
+### ✅ **完全に重複を排除**
+- 「資産価値の減価」セクションを削除
+- 孤立したテキストボックスを削除
+- ベトナムの事例は冒頭の「なぜ日本製なのか」に統合
+
+### ✅ **明確な構成**
+```
+1. FRP基礎知識
+   ├─ FRPとは？
+   ├─ 3素材比較
+   ├─ なぜ日本製中古なのか（6つの理由）← ベトナム事例含む
+   └─ 新造 vs 中古比較
+
+2. 理由01：耐久性
+3. 理由02：選別と再生
+4. 理由03：生け簀（最重要）
+
+5. まとめ + エビデンス
+6. 技術移転
