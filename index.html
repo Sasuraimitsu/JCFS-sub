@@ -76,46 +76,68 @@
 
         <section class="py-24 bg-white overflow-hidden">
 
-            <div class="mt-24 max-w-5xl mx-auto">
-                    <div class="text-center mb-12">
-                        <h4 class="text-sm font-black text-slate-400 uppercase tracking-widest mb-2">Business Structure</h4>
-                        <p class="text-xl font-bold text-slate-800">全体像</p>
-                    </div>
-                    <div class="relative flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4">
-                        <div class="flex-1 w-full bg-blue-50/50 border-2 border-blue-100 rounded-2xl p-6 text-center z-10 shadow-sm">
-                            <div class="text-3xl mb-2">👤</div>
-                            <div class="text-[10px] font-black text-blue-800 mb-1 uppercase tracking-widest">Step 01: Investor</div>
-                            <div class="text-base font-black text-slate-800">投資家様</div>
-                            <div class="mt-3 py-2 bg-white/80 rounded-lg text-[11px] text-slate-600 font-bold border border-blue-50">
-                                中古FRP漁船を<br><span class="text-blue-700 uppercase">購入 & 所有 & リース</span>
-                            </div>
-                        </div>
-                        <div class="hidden md:block text-blue-200 text-2xl font-black">→</div>
-                        <div class="flex-1 w-full bg-blue-700 border-2 border-blue-500 rounded-2xl p-8 text-center text-white shadow-xl z-10 scale-105 transform">
-                            <div class="text-3xl mb-2">🚢</div>
-                            <div class="text-[10px] font-black text-blue-200 mb-1 uppercase tracking-widest">Step 02: Management</div>
-                            <div class="text-lg font-black italic">日本品質の選別 × 現地運用</div>
-    <div class="mt-4 py-3 bg-white/10 rounded-lg text-[11px] text-blue-50 border border-white/20 leading-relaxed">
-        国内の厳選されたFRP船のみを調達<br>
-        <span class="text-amber-300 font-black">現地メンテナンス体制を構築</span>
+            <!-- Business Structure Section -->
+<div class="mt-12 max-w-5xl mx-auto px-4"> <!-- mt-24をmt-12へ短縮 -->
+    <div class="text-center mb-12">
+        <h4 class="text-sm font-black text-slate-400 uppercase tracking-widest mb-2">Business Structure</h4>
+        <p class="text-3xl font-black text-slate-900">全体像</p> <!-- 文字サイズを大きく、太く変更 -->
     </div>
-                            <div class="text-lg font-black">漁船リース事業</div>
-                            <div class="mt-4 py-3 bg-white/10 rounded-lg text-[11px] text-blue-50 border border-white/20">
-                                現地の鮮魚輸送に活用<br><span class="text-amber-300 font-black">リース管理・メンテナンス</span>
-                            </div>
-                        </div>
-                        <div class="hidden md:block text-amber-200 text-2xl font-black">→</div>
-                        <div class="flex-1 w-full bg-amber-50/50 border-2 border-amber-100 rounded-2xl p-6 text-center z-10 shadow-sm">
-                            <div class="text-3xl mb-2">💰</div>
-                            <div class="text-[10px] font-black text-amber-700 mb-1 uppercase tracking-widest">Step 03: Returns</div>
-                            <div class="text-base font-black text-slate-800">リース料収益</div>
-                            <div class="mt-3 py-2 bg-white/80 rounded-lg text-[11px] text-amber-900 font-bold border border-amber-50">
-                                想定配当利回り<br><span class="text-xl font-black text-amber-600">8.0% / year</span>
-                            </div>
-                        </div>
-                        <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-slate-100 -z-0"></div>
-                    </div>
+    
+    <div class="relative flex flex-col md:flex-row items-stretch justify-between gap-6 md:gap-4">
+        <!-- INVESTOR Card -->
+        <div class="flex-1 w-full bg-blue-50/50 border-2 border-blue-100 rounded-2xl p-6 text-center z-10 shadow-sm flex flex-col justify-between">
+            <div>
+                <div class="text-3xl mb-2">👤</div>
+                <div class="text-[10px] font-black text-blue-800 mb-1 uppercase tracking-widest">INVESTOR</div>
+                <div class="text-base font-black text-slate-800">投資家様</div>
+            </div>
+            <div class="mt-4 py-2 bg-white/80 rounded-lg text-[11px] text-slate-600 font-bold border border-blue-50">
+                中古FRP漁船を<br><span class="text-blue-700 uppercase tracking-tighter">購入 & 所有 & リース</span>
+            </div>
+        </div>
+
+        <div class="hidden md:flex items-center text-blue-200 text-2xl font-black">→</div>
+
+        <!-- MANAGEMENT Card -->
+        <div class="flex-1 w-full bg-blue-700 border-2 border-blue-500 rounded-2xl p-8 text-center text-white shadow-xl z-10 scale-105 transform">
+            <div class="text-3xl mb-2">🚢</div>
+            <div class="text-[10px] font-black text-blue-200 mb-1 uppercase tracking-widest">MANAGEMENT</div>
+            <div class="text-lg font-black italic mb-2">日本品質の選別 × 現地運用</div>
+            <div class="py-3 bg-white/10 rounded-lg text-[11px] text-blue-50 border border-white/20 leading-relaxed mb-4">
+                国内の厳選されたFRP船のみを調達<br>
+                <span class="text-amber-300 font-black tracking-tight">現地メンテナンス体制を構築</span>
+            </div>
+            <div class="text-lg font-black">漁船リース事業</div>
+            <div class="mt-4 py-3 bg-white/10 rounded-lg text-[11px] text-blue-50 border border-white/20">
+                現地の鮮魚輸送に活用<br><span class="text-amber-300 font-black">リース管理・運用サポート</span>
+            </div>
+        </div>
+
+        <div class="hidden md:flex items-center text-amber-200 text-2xl font-black">→</div>
+
+        <!-- FISHERY ASSOCIATION Card -->
+        <div class="flex-1 w-full bg-amber-50/50 border-2 border-amber-100 rounded-2xl p-6 text-center z-10 shadow-sm flex flex-col justify-between">
+            <div>
+                <div class="text-3xl mb-2">🏛️</div>
+                <div class="text-[10px] font-black text-amber-700 mb-1 uppercase tracking-widest">FISHERY ASSOCIATION</div>
+                <div class="text-base font-black text-slate-800">漁業組合</div>
+            </div>
+            <div class="mt-4 space-y-2">
+                <div class="py-2 px-1 bg-white/80 rounded-lg text-[10px] text-amber-900 font-bold border border-amber-50 leading-tight">
+                    漁師の管理体制の構築
                 </div>
+                <div class="py-2 px-1 bg-white/80 rounded-lg text-[10px] text-amber-900 font-bold border border-amber-50 leading-tight">
+                    水揚げ量の管理
+                </div>
+                <div class="py-2 px-1 bg-white/80 rounded-lg text-[10px] text-amber-900 font-bold border border-amber-100 leading-tight shadow-sm">
+                    <span class="text-amber-700">漁業インフラの整備・運営</span><br>
+                    <span class="text-[9px] text-slate-500 opacity-80">(荷卸し場、冷蔵施設、輸送体制)</span>
+                </div>
+            </div>
+        </div>
+        <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-slate-100 -z-0"></div>
+    </div>
+</div>
 
 
             
@@ -358,6 +380,35 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="mt-6 bg-amber-50 p-6 rounded-2xl border border-amber-100 shadow-sm">
+    <h6 class="text-sm font-black text-amber-900 mb-3 flex items-center gap-2">
+        <span>📝</span> 個人の投資家様へ：償却方法の変更手続き
+    </h6>
+    <p class="text-[13px] text-amber-800 leading-relaxed font-bold mb-3">
+        個人の場合、税務上の原則は「定額法（2年かけて償却）」となりますが、以下の手続きにより初年度に100%償却することが可能になります。
+    </p>
+    <div class="space-y-3">
+        <div class="flex items-start gap-2">
+            <span class="text-blue-700 font-bold text-[13px]">●</span>
+            <p class="text-[12px] text-slate-700 font-medium">
+                <span class="font-black text-slate-900">必要書類：</span><br>
+                「所得税の減価償却資産の償却方法の届出書」を提出し、償却方法に「定率法」を選択します。
+            </p>
+        </div>
+        <div class="flex items-start gap-2">
+            <span class="text-blue-700 font-bold text-[13px]">●</span>
+            <p class="text-[12px] text-slate-700 font-medium">
+                <span class="font-black text-slate-900">提出期限：</span><br>
+                資産を取得した年の「確定申告期限（翌年3月15日）」まで。
+            </p>
+        </div>
+    </div>
+    <p class="mt-4 text-[11px] text-amber-700 italic border-t border-amber-200/50 pt-3 font-medium">
+        ※この届出により、個人でも初年度に投資額のほぼ全額を経費算入し、所得税・住民税を大幅に圧縮するメリットを享受できます。
+    </p>
+</div>
+
                     
                     <div class="mt-10 pt-6 border-t border-slate-100 flex items-center justify-center gap-2">
                         <span class="w-1.5 h-1.5 bg-slate-300 rounded-full"></span>
