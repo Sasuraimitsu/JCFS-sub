@@ -74,10 +74,12 @@
             </div>
         </header>
 
-        <section class="pt-40 pb-24 bg-white overflow-hidden">
+        <!-- pt-40 を pt-20 にして Hero との距離を縮小 -->
+<section class="pt-20 pb-24 bg-white overflow-hidden">
 
-            <!-- Business Structure Section -->
-<div class="mt-4 max-w-5xl mx-auto px-4"> <!-- mt-24をmt-12へ短縮 -->
+    <!-- Business Structure Section (mt-4 を削除してさらに上へ) -->
+    <div class="max-w-5xl mx-auto px-4">
+
     <div class="text-center mb-12">
         <h4 class="text-sm font-black text-slate-400 uppercase tracking-widest mb-2">Business Structure</h4>
         <p class="text-4xl font-black text-slate-900">全体像</p> <!-- 文字サイズを大きく、太く変更 -->
@@ -141,14 +143,15 @@
 
 
             
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="text-center mb-20">
-                    <h2 class="text-xs font-black text-blue-600 tracking-[0.4em] uppercase mb-4">Core Strategy</h2>
-                    <h3 class="text-4xl font-black text-slate-900 leading-tight">
-                        なぜ、このプロジェクトに<br class="md:hidden">魅力があるのか
-                    </h3>
-                    <div class="w-16 h-1 bg-amber-500 mx-auto mt-6"></div>
-                </div>
+            <!-- mt-32 で全体像との間隔を確保し、border-t で区切りを明確にしました -->
+<div class="max-w-7xl mx-auto px-4 mt-32 pt-20 border-t border-slate-100">
+    <div class="text-center mb-20">
+        <h2 class="text-xs font-black text-blue-600 tracking-[0.4em] uppercase mb-4">Core Strategy</h2>
+        <h3 class="text-4xl font-black text-slate-900 leading-tight">
+            なぜ、このプロジェクトに<br class="md:hidden">魅力があるのか
+        </h3>
+        <div class="w-16 h-1 bg-amber-500 mx-auto mt-6"></div>
+    </div>
 
                 <div class="grid md:grid-cols-3 gap-10 mb-20">
                     <div class="info-card group relative">
