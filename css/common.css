@@ -11,6 +11,8 @@ body {
     color: #0f172a;
     scroll-behavior: smooth;
     margin: 0;
+    /* fixedナビの高さ分だけコンテンツを下げる */
+    padding-top: 80px;
 }
 
 /* 2. ナビゲーション
