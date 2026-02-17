@@ -1,1 +1,165 @@
+/* ==========================================
+   JCFS Project - index.html 専用スタイル
+   index.htmlのみで読み込む
+   ========================================== */
+
+/* 1. ヒーローセクション
+   ========================================== */
+.hero-investment {
+    background:
+        linear-gradient(rgba(2, 6, 23, 0.8), rgba(30, 58, 138, 0.8)),
+        url('assets/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 140px 20px;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 光の演出 */
+.hero-bg-light-1,
+.hero-bg-light-2 {
+    position: absolute;
+    filter: blur(80px);
+    pointer-events: none;
+}
+.hero-bg-light-1 {
+    top: -10%; left: -10%;
+    width: 70%; height: 70%;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, transparent 70%);
+    animation: float 10s ease-in-out infinite;
+}
+.hero-bg-light-2 {
+    bottom: -10%; right: -10%;
+    width: 60%; height: 60%;
+    background: radial-gradient(circle, rgba(96, 165, 250, 0.25) 0%, transparent 70%);
+    animation: float 15s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(5%, 5%); }
+}
+
+/* タイトル・バッジ */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    margin-bottom: 40px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    backdrop-filter: blur(4px);
+}
+.hero-badge-dot {
+    width: 8px; height: 8px;
+    background: #4ade80;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #4ade80;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.6; }
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 32px;
+    letter-spacing: -0.02em;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+.hero-title-sub {
+    color: #c5a059;
+    display: block;
+    margin-top: 15px;
+    filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.3));
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+}
+.hero-description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #ffffff !important;
+    max-width: 850px;
+    margin: 0 auto 80px;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+/* ヒーローグリッド */
+.hero-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.hero-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 40px 30px;
+    border-radius: 28px;
+    transition: all 0.3s;
+}
+.hero-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(197, 160, 89, 0.5);
+    transform: translateY(-5px);
+}
+.hero-card-label {
+    font-size: 11px;
+    font-weight: 900;
+    color: #93c5fd;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+.hero-card-value {
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 1;
+}
+.hero-card-unit {
+    font-size: 20px;
+    color: #c5a059;
+    margin-left: 4px;
+}
+
+/* 2. シミュレーター
+   ========================================== */
+#investRange {
+    -webkit-appearance: none;
+    height: 10px;
+    background: #cbd5e1;
+    border-radius: 10px;
+    outline: none;
+}
+#investRange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 26px; height: 26px;
+    background: #a38654;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#annualReturn,
+#taxSaving,
+#netOutlay {
+    color: #92400e !important;
+    font-weight: 800;
+}
 
