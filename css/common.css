@@ -1,1 +1,98 @@
+/* ==========================================
+   JCFS Project - 共通スタイル
+   全ページで読み込む
+   ========================================== */
 
+/* 1. 基本設定
+   ========================================== */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+    scroll-behavior: smooth;
+    margin: 0;
+}
+
+/* 2. ナビゲーション
+   ========================================== */
+.nav-link {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #334155;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.nav-link:hover {
+    color: #1e3a8a;
+}
+.nav-link.active {
+    color: #1e3a8a;
+    border-bottom: 2px solid #1e3a8a;
+}
+
+/* 3. 共通カードコンポーネント
+   ========================================== */
+.info-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.info-card p {
+    color: #334155;
+    font-weight: 500;
+    line-height: 1.7;
+}
+.info-card:hover,
+.hover-lift:hover {
+    border-color: #c5a059;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+}
+
+.pillar-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+.pillar-card:hover {
+    border-color: #1e40af;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. スキーム図（Business Structure）
+   ========================================== */
+.flex-1.rounded-2xl {
+    transition: all 0.3s ease;
+}
+.bg-blue-700.scale-105 {
+    box-shadow: 0 20px 40px -10px rgba(30, 58, 138, 0.4);
+    border: none !important;
+}
+.flex-1.rounded-2xl:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* 5. テキスト視認性
+   ========================================== */
+.text-slate-500,
+.text-slate-600 {
+    color: #475569 !important;
+    font-weight: 500;
+}
+
+/* 6. チャートコンテナ
+   ========================================== */
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    margin: auto;
+}
