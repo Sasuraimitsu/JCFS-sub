@@ -4,35 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Market Strategy | Koh Kong | JCFS Project</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Noto Sans JP', sans-serif; }
-        .nav-link { font-size: 0.875rem; font-weight: 700; color: #64748b; transition: all 0.3s; text-decoration: none; }
-        .nav-link:hover { color: #1e40af; }
-    </style>
-</head>
-<body class="antialiased text-[#0f172a] bg-[#f8fafc]">
 
-    <!-- NAVIGATION -->
-    <nav class="sticky top-0 w-full z-50 bg-white/95 border-b border-slate-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
-            <a href="index.html" class="flex items-center no-underline">
-                <img src="assets/metis-logo.jpg" alt="株式会社METIS" class="h-10 w-auto mr-3 object-contain" onerror="this.style.display='none'">
-                <span class="text-2xl font-bold text-slate-900 tracking-tighter italic">JCFS Project</span>
-            </a>
-            <div class="hidden lg:flex space-x-8">
-                <a href="index.html" class="nav-link">ホーム</a>
-                <a href="tech.html" class="nav-link">深掘り01 何故、FRP漁船を?</a>
-                <a href="strategy.html" class="nav-link text-blue-800 border-b-2 border-blue-800">深掘り02 何故、この地域に?</a>
-                <a href="governance.html" class="nav-link">深掘り03 何故、JCFSが展開できるのか?</a>
-            </div>
-            <a href="https://line.me/R/ti/p/WA5-yz4DJQ" target="_blank" rel="noopener noreferrer"
-               class="bg-[#06C755] hover:bg-[#05a346] text-white font-bold py-2.5 px-6 rounded shadow-md transition-all no-underline flex items-center">
-                お問い合わせ
-            </a>
-        </div>
-    </nav>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- 共通CSS -->
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+    <!-- ナビゲーション（common.jsが自動生成） -->
+    <div id="nav-placeholder"></div>
 
     <main>
 
@@ -285,7 +270,7 @@
                     </div>
                 </div>
 
-                <!-- 主な活動 -->
+                <!-- 主な活動と財務 -->
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
                         <h4 class="font-black text-slate-900 mb-3 text-sm">✅ 主な活動内容</h4>
@@ -328,7 +313,7 @@
             </div>
 
             <!-- なぜこの提携が参入障壁になるのか -->
-            <div class="bg-blue-900 text-white p-8 rounded-2xl mb-8">
+            <div class="bg-blue-900 text-white p-8 rounded-2xl">
                 <h3 class="text-2xl font-black mb-6 text-center">
                     🔒 なぜこの提携が「独占的参入障壁」になるのか
                 </h3>
@@ -489,9 +474,11 @@
 
     </main>
 
-    <footer class="bg-slate-900 py-16 text-center border-t border-white/10">
-        <p class="text-slate-500 text-xs font-bold">© 2026 JCFS Project / METIS Co., Ltd. All Rights Reserved.</p>
-    </footer>
+    <!-- フッター（common.jsが自動生成） -->
+    <div id="footer-placeholder"></div>
+
+    <!-- 共通JS -->
+    <script src="js/common.js"></script>
 
 </body>
 </html>
