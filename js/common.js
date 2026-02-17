@@ -9,7 +9,7 @@ const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
 // ナビゲーションHTML
 const navHTML = `
-<nav class="sticky top-0 w-full z-50 bg-white/95 border-b border-slate-200 shadow-sm" id="main-nav">
+<nav class="fixed top-0 left-0 w-full z-50 bg-white/95 border-b border-slate-200 shadow-sm" id="main-nav">
     <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
 
         <!-- ロゴ -->
