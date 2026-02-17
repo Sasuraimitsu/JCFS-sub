@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>敏五丸（第1号艇）| JCFS Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .lightbox-backdrop { position:fixed; inset:0; background:rgba(0,0,0,.8); display:none; align-items:center; justify-content:center; z-index:100; }
+        .lightbox-backdrop.show { display:flex; }
+        .lightbox-img { max-width:92vw; max-height:88vh; border-radius:.75rem; box-shadow:0 20px 60px rgba(0,0,0,.5); }
+    </style>
+</head>
+<body class="antialiased text-[#0f172a] bg-[#f8fafc]">
+
+    <div id="nav-placeholder"></div>
+
+    <main>
+        <!-- Hero -->
+        <section class="bg-white border-b border-slate-100">
+            <div class="max-w-6xl mx-auto px-4 py-10">
+                <div class="flex flex-wrap items-center gap-2 mb-3 text-sm text-slate-500 font-bold">
+                    <a href="../tech.html" class="hover:text-blue-600 no-underline">深掘り01</a>
+                    <span>›</span>
+                    <a href="../tech.html#vessels" class="hover:text-blue-600 no-underline">導入船舶一覧</a>
+                    <span>›</span>
+                    <span class="text-slate-800">敏五丸</span>
+                </div>
+                <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-3 py-1 bg-amber-500 text-white text-xs font-black rounded-full">第1号艇</span>
+                            <span class="px-3 py-1 bg-green-600 text-white text-xs font-black rounded-full">輸出承認取得済</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-black rounded-full">FRP</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-black rounded-full">活魚槽</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-black rounded-full">約2トン</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-black rounded-full">全長9.15m</span>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl font-black text-slate-900">敏五丸</h1>
+                        <p class="text-slate-500 mt-2 font-bold">登録番号：ME3-52006</p>
+                    </div>
+                    <a href="../tech.html#vessels" class="inline-flex items-center gap-2 px-5 py-3 bg-slate-800 text-white font-black rounded-xl hover:bg-slate-700 transition-all no-underline">
+                        ← 一覧へ戻る
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- メインコンテンツ -->
+        <section class="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8">
+
+            <!-- ギャラリー -->
+            <div class="md:col-span-2">
+                <h2 class="text-lg font-black text-slate-900 mb-4">📷 フォトギャラリー</h2>
+                <div id="gallery" class="grid grid-cols-2 md:grid-cols-3 gap-3"></div>
+                <p class="text-xs text-slate-400 mt-2 font-bold">※ 画像をクリックすると拡大表示します</p>
+            </div>
+
+            <!-- クイックスペック -->
+            <div class="md:col-span-1">
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sticky top-24">
+                    <h2 class="text-lg font-black text-slate-900 mb-4">クイックスペック</h2>
+                    <dl class="space-y-3 text-sm mb-6">
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <dt class="text-slate-500 font-bold">船名</dt>
+                            <dd class="font-black text-slate-900">敏五丸</dd>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <dt class="text-slate-500 font-bold">登録番号</dt>
+                            <dd class="font-black text-slate-900">ME3-52006</dd>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <dt class="text-slate-500 font-bold">全長</dt>
+                            <dd class="font-black text-slate-900">9.15 m</dd>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <dt class="text-slate-500 font-bold">幅</dt>
+                            <dd class="font-black text-slate-900">2.28 m</dd>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-100 pb-2">
+                            <dt class="text-slate-500 font-bold">総トン数</dt>
+                            <dd class="font-black text-slate-900">2.0 t</dd>
+                        </div>
+                    </dl>
+                    <h3 class="text-sm font-black text-blue-700 mb-2">想定される漁業種類</h3>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-black rounded">刺網</span>
+                        <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-black rounded">採介藻</span>
+                        <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-black rounded">一本釣り</span>
+                        <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-black rounded">雑</span>
+                    </div>
+                    <a href="https://line.me/R/ti/p/WA5-yz4DJQ" target="_blank"
+                       class="block w-full text-center px-4 py-3 bg-blue-700 text-white font-black rounded-xl hover:bg-blue-800 transition-all no-underline">
+                        この船について相談する
+                    </a>
+                    <a href="https://sasuraimitsu.github.io/JCFS/assets/boats/toshigomaru/10.jpg" target="_blank"
+                       class="block w-full text-center px-4 py-3 border border-slate-300 text-slate-700 font-black rounded-xl hover:bg-slate-50 transition-all no-underline mt-2">
+                        漁船登録票を見る
+                    </a>
+                    <p class="text-[10px] text-slate-400 mt-3 leading-relaxed">※ 表示値は登録票等の読み取りに基づく概数です。最終仕様は現物を優先します。</p>
+                </div>
+            </div>
+
+            <!-- 詳細スペックテーブル -->
+            <div class="md:col-span-3 bg-white rounded-2xl border border-slate-200 shadow-sm p-8">
+                <h2 class="text-2xl font-black text-slate-900 mb-6">詳細スペック</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="font-black text-blue-700 mb-3">船体情報</h3>
+                        <table class="w-full text-sm">
+                            <tbody class="divide-y divide-slate-100">
+                                <tr class="bg-slate-50"><td class="p-3 text-slate-500 font-bold w-32">材質</td><td class="p-3 font-black">FRP</td></tr>
+                                <tr><td class="p-3 text-slate-500 font-bold">総トン数</td><td class="p-3 font-black">2.0 t</td></tr>
+                                <tr class="bg-slate-50"><td class="p-3 text-slate-500 font-bold">全長（L）</td><td class="p-3 font-black">9.15 m</td></tr>
+                                <tr><td class="p-3 text-slate-500 font-bold">幅（B）</td><td class="p-3 font-black">2.28 m</td></tr>
+                                <tr class="bg-slate-50"><td class="p-3 text-slate-500 font-bold">深さ（D）</td><td class="p-3 font-black">0.65 m</td></tr>
+                                <tr><td class="p-3 text-slate-500 font-bold">建造所</td><td class="p-3 font-black">八光船舶産業株式会社</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <h3 class="font-black text-blue-700 mb-3">機関情報</h3>
+                        <table class="w-full text-sm">
+                            <tbody class="divide-y divide-slate-100">
+                                <tr class="bg-slate-50"><td class="p-3 text-slate-500 font-bold w-32">機関種別</td><td class="p-3 font-black">船内機</td></tr>
+                                <tr><td class="p-3 text-slate-500 font-bold">製造者</td><td class="p-3 font-black">ヤンマー</td></tr>
+                                <tr class="bg-slate-50"><td class="p-3 text-slate-500 font-bold">型式</td><td class="p-3 font-black">6PH(T,HT),6PHS</td></tr>
+                                <tr><td class="p-3 text-slate-500 font-bold">エンジン出力</td><td class="p-3 font-black">60 PS</td></tr>
+                            </tbody>
+                        </table>
+                        <h3 class="font-black text-blue-700 mt-6 mb-3">主な装備</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center gap-2"><span class="text-green-600 font-black">✓</span><span class="font-bold text-slate-700">レーダー（KODEN系ラドーム）</span></li>
+                            <li class="flex items-center gap-2"><span class="text-green-600 font-black">✓</span><span class="font-bold text-slate-700">魚群探知機：HONDEX</span></li>
+                            <li class="flex items-center gap-2"><span class="text-green-600 font-black">✓</span><span class="font-bold text-slate-700">オートパイロット：marol CB-88</span></li>
+                            <li class="flex items-center gap-2"><span class="text-green-600 font-black">✓</span><span class="font-bold text-slate-700">活魚槽</span></li>
+                            <li class="flex items-center gap-2"><span class="text-green-600 font-black">✓</span><span class="font-bold text-slate-700">アウトリガー一式</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- ライトボックス -->
+    <div id="lightbox" class="lightbox-backdrop">
+        <img id="lightbox-img" class="lightbox-img" alt="">
+    </div>
+
+    <script src="../js/common.js"></script>
+    <script>
+        const BASE = 'https://sasuraimitsu.github.io/JCFS/';
+        const photos = [
+            'assets/boats/toshigomaru/01.jpg','assets/boats/toshigomaru/02.jpg',
+            'assets/boats/toshigomaru/04.jpg','assets/boats/toshigomaru/05.jpg',
+            'assets/boats/toshigomaru/06.jpg','assets/boats/toshigomaru/08.jpg',
+            'assets/boats/toshigomaru/09.jpg','assets/boats/toshigomaru/m01.jpg',
+            'assets/boats/toshigomaru/m02.jpg','assets/boats/toshigomaru/m03.jpg',
+            'assets/boats/toshigomaru/m04.jpg','assets/boats/toshigomaru/m05.jpg',
+            'assets/boats/toshigomaru/m06.jpg','assets/boats/toshigomaru/m07.jpg',
+            'assets/boats/toshigomaru/m08.jpg','assets/boats/toshigomaru/m09.jpg',
+        ];
+        const gallery = document.getElementById('gallery');
+        photos.forEach((p, i) => {
+            const btn = document.createElement('button');
+            btn.className = 'group relative rounded-xl overflow-hidden bg-slate-200 aspect-video';
+            btn.innerHTML = `<img src="${BASE+p}" alt="photo ${i+1}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.parentElement.style.display='none'">`;
+            btn.addEventListener('click', () => { document.getElementById('lightbox-img').src = BASE+p; document.getElementById('lightbox').classList.add('show'); });
+            gallery.appendChild(btn);
+        });
+        document.getElementById('lightbox').addEventListener('click', e => { if(e.target.id==='lightbox'||e.target.id==='lightbox-img') e.currentTarget.classList.remove('show'); });
+    </script>
+</body>
+</html>
